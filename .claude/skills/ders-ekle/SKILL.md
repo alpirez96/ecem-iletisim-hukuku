@@ -1,6 +1,14 @@
 ---
 name: ders-ekle
-description: "Ecem'in Dersleri" sitesine (graduecem.vercel.app, repo alpirez96/ecem-iletisim-hukuku) yeni ders ekler ya da mevcut bir derse yeni hafta/konu ekler. Ders notlarını (PPTX, PDF, zip; PDF'lerde sarıyla işaretlenmiş yerler dahil) okuyup detaylı özet, sınavda gereken her şeyi içeren kısa özet, tek sayfa (one pager), bilgi kartları, test soruları, özet PDF'leri, sunum önizlemeleri ve orijinal materyal listesini üretir; onay alıp aynı repoya push ederek Vercel'e deploy eder. Kullanıcı bir dersin notlarını, sunumlarını ya da haftalık materyalini yüklediğinde; "X dersini ekle", "yeni hafta geldi", "sosyolojiye 7. haftayı ekle", "bu notları siteye koy", "Ecem için çalışma materyali hazırla", "deploy et / yayına al" dediğinde bu skill'i kullan — "skill" ya da "ders ekle" demese bile.
+description: >-
+  "Ecem'in Dersleri" sitesine (graduecem.vercel.app, repo alpirez96/ecem-iletisim-hukuku) yeni ders ekler ya
+  da mevcut bir derse yeni hafta/konu ekler. Ders notlarını (PPTX, PDF, zip; PDF'lerde sarıyla işaretlenmiş
+  yerler dahil) okuyup detaylı özet, sınavda gereken her şeyi içeren kısa özet, tek sayfa (one pager), bilgi
+  kartları, test soruları, özet PDF'leri, sunum önizlemeleri ve orijinal materyal listesini üretir; onay alıp
+  aynı repoya push ederek Vercel'e deploy eder. Kullanıcı bir dersin notlarını, sunumlarını ya da haftalık
+  materyalini yüklediğinde; "X dersini ekle", "yeni hafta geldi", "sosyolojiye 7. haftayı ekle", "bu notları
+  siteye koy", "Ecem için çalışma materyali hazırla", "deploy et / yayına al" dediğinde bu skill'i kullan —
+  "skill" ya da "ders ekle" demese bile.
 ---
 
 # Ders ekle — Ecem'in Dersleri
