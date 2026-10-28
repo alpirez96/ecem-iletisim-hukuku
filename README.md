@@ -13,8 +13,11 @@ Build adımı olmayan statik bir site; Vercel'e bağlandığında her push otoma
 | Sosyoloji (Vize) | `dersler/sosyoloji/` | 2.–6. hafta, 11 konu · 101 kart · 91 soru · PDF'lerdeki sarı işaretli yerlerin özetleri |
 
 Her dersin sayfasında: **Özet** (konu konu, notlarım alanıyla) · **Kartlar** · **Test** (yanlışlarım listesiyle) ·
-**Defterim** (tüm notlar, .txt indir) · **Dosyalar** (özet PDF + orijinal materyaller).
+**Defterim** (tüm notlar, .txt indir) · **Dosyalar** (özet PDF + orijinal materyaller; her dosyada **Görüntüle** / **İndir**).
 İlerleme ve notlar tarayıcıda saklanır; başka cihaza geçmez.
+
+"Görüntüle" dosyayı sitenin içindeki PDF görüntüleyicide açar (PDF.js, `assets/vendor/pdfjs/`).
+Tarayıcılar PPTX açamadığı için sunumlar, `onizleme/` klasöründeki PDF kopyalarıyla gösterilir; "İndir" her zaman orijinal dosyayı verir.
 
 ## Vercel'e ilk kurulum (bir kez)
 
@@ -38,7 +41,7 @@ Environment Variables'a `SITE_USER` ve `SITE_PASSWORD` ekleyip yeniden deploy et
    - `questions`: `{ u: üniteId, q, o: [DOĞRU, yanlış, yanlış, yanlış], e: açıklama }` — seçenekler testte karıştırılır.
 2. Orijinal dosyaları `dersler/<ders-adi>/materyal/` altına koy.
 3. `index.html`'de `<script src="dersler/<ders-adi>/data.js"></script>` satırını ekle.
-4. Özet PDF'ini üret (aşağıda) ve push et.
+4. Özet PDF'ini ve sunum önizlemelerini üret (aşağıda) ve push et.
 
 ## Özet PDF'lerini yeniden üretmek
 
@@ -47,6 +50,16 @@ npm install --no-save playwright && npx playwright install chromium
 node scripts/pdf-olustur.js            # tüm dersler
 node scripts/pdf-olustur.js sosyoloji  # tek ders
 ```
+
+## Sunum önizlemelerini üretmek (LibreOffice gerekir)
+
+```bash
+python3 scripts/onizleme-olustur.py           # eksik önizlemeler
+python3 scripts/onizleme-olustur.py --hepsi   # hepsini yeniden
+```
+
+`materyal/x.pptx` → `onizleme/x.pdf`. Bazı sunumların XML'inde LibreOffice'in açamadığı `ns0:` önekleri var;
+betik bunları geçici bir kopyada düzeltir, orijinallere dokunmaz.
 
 ## Yerelde açmak
 

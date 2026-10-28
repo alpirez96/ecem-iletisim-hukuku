@@ -53,15 +53,23 @@
     };
   };
 
-  // PDF özeti varsa indirme bağlantılarını göster
+  // Sunumların sitede açılan PDF önizlemeleri: materyal/x.pptx -> onizleme/x.pdf
+  const previewOf = file => (/\.pdf$/i.test(file) ? file : file.replace(/^materyal\//, 'onizleme/').replace(/\.pptx?$/i, '.pdf'));
+  const DL_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-4.5-4.5M12 15l4.5-4.5M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>';
+  const viewBtn = (file, title, label, cls = 'btn sm') =>
+    `<button class="${cls}" data-act="view" data-file="${esc(file)}" data-title="${esc(title)}">${label}</button>`;
+
+  // PDF özeti varsa görüntüleme/indirme kutularını göster
   const pdfOk = {};
   const pdfUrl = c => `dersler/${c.id}/ozet.pdf`;
   function showPdfLinks(c) {
-    const apply = ok => $$('[data-pdf]').forEach(a => {
-      a.hidden = !ok;
-      a.href = pdfUrl(c);
-      a.setAttribute('download', fileName(`${c.title} ${c.exam || 'Ders'} Ozeti.pdf`));
-    });
+    const apply = ok => {
+      $$('[data-pdf]').forEach(box => { box.hidden = !ok; });
+      $$('[data-pdf-dl]').forEach(a => {
+        a.href = pdfUrl(c);
+        a.setAttribute('download', fileName(`${c.title} ${c.exam || 'Ders'} Ozeti.pdf`));
+      });
+    };
     if (c.id in pdfOk) return apply(pdfOk[c.id]);
     apply(false);
     fetch(pdfUrl(c), { method: 'HEAD' })
@@ -123,6 +131,7 @@
   function route() {
     const [cid, view = 'ozet', arg] = location.hash.replace(/^#\/?/, '').split('/').filter(Boolean).map(decodeURIComponent);
     sidebarOpen = false;
+    closeViewer();
     if (!cid || !byId[cid]) { course = null; return renderHome(); }
     setCourse(byId[cid]);
     if (view === 'kartlar') return renderDeckView(arg);
@@ -197,7 +206,9 @@
             <p><b>Bu özet, PDF'te sarıyla işaretlenmiş yerlerden hazırlandı.</b></p>
             <p>Kaynak: ${u.fromPdf.name}</p>
             ${u.fromPdf.note ? `<p class="muted">${u.fromPdf.note}</p>` : ''}
-            ${m ? `<p><a href="${matUrl(course, m.file)}" download>PDF'i indir (${m.size})</a></p>` : ''}
+            ${m ? `<p class="muted">Başlıklardaki sayfa rozetlerine basınca PDF o sayfada açılır.</p>
+            <div class="row left">${viewBtn(m.file, m.title, "PDF'i görüntüle", 'btn sm primary')}
+              <a class="btn sm" href="${matUrl(course, m.file)}" download>İndir (${m.size})</a></div>` : ''}
           </div>
         </div>`);
     }
@@ -206,10 +217,34 @@
       parts.push(`
         <div class="source">
           <span class="source-label">Kaynak ${files.length > 1 ? 'sunumlar' : 'sunum'}</span>
-          ${files.map(m => `<a class="file-chip" href="${matUrl(course, m.file)}" download>${m.title} <small>${m.size}</small></a>`).join('')}
+          ${files.map(m => `
+            <span class="file-chip">
+              ${viewBtn(m.file, m.title, `${m.title} <small>Görüntüle</small>`, 'chip-main')}
+              <a class="chip-dl" href="${matUrl(course, m.file)}" download aria-label="İndir: ${esc(m.title)}" title="İndir (${m.size})">${DL_ICON}</a>
+            </span>`).join('')}
         </div>`);
     }
     return parts.join('');
+  }
+
+  // PDF'ten gelen konularda "s. 14–15" rozetleri PDF'i o sayfada açar
+  function linkPageRefs(u) {
+    const f = u.fromPdf;
+    if (!f || !f.file) return;
+    const m = (course.materials || []).find(x => x.file === f.file);
+    $$('.prose .ref').forEach(span => {
+      const n = (span.textContent.match(/\d+/) || [])[0];
+      if (!n) return;
+      const btn = document.createElement('button');
+      btn.className = 'ref';
+      btn.dataset.act = 'view';
+      btn.dataset.file = f.file;
+      btn.dataset.title = m ? m.title : u.title;
+      btn.dataset.page = Number(n) + (f.pdfOffset || 0);
+      btn.title = `PDF'i bu sayfada aç`;
+      btn.textContent = span.textContent;
+      span.replaceWith(btn);
+    });
   }
 
   function noteArea(u, rows) {
@@ -247,10 +282,10 @@
               <p>${s.known}/${course.cards.length} kart biliniyor · ${s.wrong} yanlış soru · ${s.notes} konuda not</p>
             </div>
             <ol class="unit-list">${unitList(u)}</ol>
-            <a class="pdf-card" data-pdf href="#" download hidden>
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-4.5-4.5M12 15l4.5-4.5M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
-              <span><b>Özet PDF'i indir</b><small>Tüm konular tek dosyada, yazdırmaya uygun</small></span>
-            </a>
+            <div class="pdf-card" data-pdf hidden>
+              <span><b>Özet PDF</b><small>Tüm konular tek dosyada, yazdırmaya uygun</small></span>
+              <div class="row left">${viewBtn('ozet.pdf', `${course.title} — Özet`, 'Görüntüle', 'btn sm primary')}<a class="btn sm" data-pdf-dl href="#" download>İndir</a></div>
+            </div>
           </div>
         </aside>
 
@@ -280,6 +315,7 @@
         </article>
       </div>`;
     showPdfLinks(course);
+    linkPageRefs(u);
     growAll();
     if (keepScroll) window.scrollTo(0, y);
   }
@@ -340,11 +376,14 @@
     const mats = course.materials || [];
     const ext = f => f.split('.').pop().toUpperCase();
     const item = m => `
-      <li><a class="file-row" href="${matUrl(course, m.file)}" download>
+      <li class="file-row">
         <span class="ext">${ext(m.file)}</span>
         <span class="file-meta"><b>${m.title}</b><small>${[m.kind, m.size].filter(Boolean).join(' · ')}</small></span>
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-4.5-4.5M12 15l4.5-4.5M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
-      </a></li>`;
+        <span class="file-actions">
+          ${viewBtn(m.file, m.title, 'Görüntüle', 'btn sm primary')}
+          <a class="btn sm" href="${matUrl(course, m.file)}" download aria-label="İndir: ${esc(m.title)}">${DL_ICON}<span>İndir</span></a>
+        </span>
+      </li>`;
     const groups = groupsOf(course);
     const list = !mats.length ? '<p class="muted">Bu ders için yüklenmiş orijinal materyal yok.</p>'
       : groups.length
@@ -355,11 +394,14 @@
         : `<ul class="file-list">${mats.map(item).join('')}</ul>`;
     app.innerHTML = `
       <section class="practice files">
-        <header class="practice-head"><h1>Dosyalar</h1></header>
-        <a class="pdf-card big" data-pdf href="#" download hidden>
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-4.5-4.5M12 15l4.5-4.5M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+        <header class="practice-head">
+          <h1>Dosyalar</h1>
+          <p class="muted">"Görüntüle" dosyayı sitede açar; sunumlar PDF önizlemesi olarak gösterilir. "İndir" orijinal dosyayı indirir.</p>
+        </header>
+        <div class="pdf-card big" data-pdf hidden>
           <span><b>Özet PDF</b><small>Bu sitedeki tüm konu özetleri tek dosyada (A4, yazdırmaya uygun)</small></span>
-        </a>
+          <div class="row left">${viewBtn('ozet.pdf', `${course.title} — Özet`, 'Görüntüle', 'btn sm primary')}<a class="btn sm" data-pdf-dl href="#" download>İndir</a></div>
+        </div>
         <h2 class="section-title">Orijinal materyaller</h2>
         ${list}
       </section>`;
@@ -611,6 +653,178 @@
     window.scrollTo(0, 0);
   }
 
+  // ---------- Görüntüleyici (PDF.js, sadece açılınca yüklenir) ----------
+  const PDFJS_DIR = 'assets/vendor/pdfjs/';
+  const ZOOMS = [0.5, 0.75, 1, 1.25, 1.5, 2, 2.5, 3];
+  let pdfjs = null;
+  let viewer = null;
+
+  function loadPdfjs() {
+    if (!pdfjs) {
+      pdfjs = new Promise((resolve, reject) => {
+        const s = document.createElement('script');
+        s.src = PDFJS_DIR + 'pdf.min.js';
+        s.onload = () => {
+          window.pdfjsLib.GlobalWorkerOptions.workerSrc = PDFJS_DIR + 'pdf.worker.min.js';
+          resolve(window.pdfjsLib);
+        };
+        s.onerror = () => { pdfjs = null; reject(new Error('pdf.js yüklenemedi')); };
+        document.head.appendChild(s);
+      });
+    }
+    return pdfjs;
+  }
+
+  function openViewer(file, title, page) {
+    closeViewer();
+    const src = matUrl(course, previewOf(file));
+    const dl = matUrl(course, file);
+    const isPreview = previewOf(file) !== file;
+    const el = document.createElement('div');
+    el.className = 'viewer';
+    el.setAttribute('role', 'dialog');
+    el.setAttribute('aria-modal', 'true');
+    el.setAttribute('aria-label', title);
+    el.innerHTML = `
+      <header class="viewer-bar">
+        <button class="btn icon" data-act="viewer-close" aria-label="Kapat">✕</button>
+        <div class="viewer-title">
+          <b>${esc(title)}</b>
+          <small>${isPreview ? 'Sunum önizlemesi · ' : ''}Sayfa <input class="viewer-page" type="number" min="1" value="1" inputmode="numeric" aria-label="Sayfa numarası"> / <span class="viewer-total">…</span></small>
+        </div>
+        <div class="viewer-tools">
+          <button class="btn icon" data-act="viewer-zoom" data-z="-1" aria-label="Uzaklaştır">−</button>
+          <button class="btn icon" data-act="viewer-zoom" data-z="1" aria-label="Yakınlaştır">+</button>
+          <a class="btn primary" href="${dl}" download>${DL_ICON}<span>İndir</span></a>
+        </div>
+      </header>
+      <div class="viewer-body"><div class="viewer-pages"></div><p class="viewer-msg">Yükleniyor…</p></div>`;
+    document.body.appendChild(el);
+    document.body.classList.add('viewer-open');
+    history.pushState({ viewer: true }, '');
+    const v = viewer = {
+      el, body: $('.viewer-body', el), wrap: $('.viewer-pages', el),
+      zoom: 2, token: 0, pages: [], visible: new Set(), queue: [], busy: false, start: page || 1
+    };
+    $('[data-act="viewer-close"]', el).focus();
+    v.body.addEventListener('scroll', () => {
+      if (v.ticking) return;
+      v.ticking = true;
+      requestAnimationFrame(() => { v.ticking = false; updatePageNo(v); });
+    });
+    loadPdfjs()
+      .then(lib => { v.task = lib.getDocument({ url: src }); return v.task.promise; })
+      .then(doc => { if (viewer !== v) return doc.destroy(); v.doc = doc; return setupPages(v); })
+      .catch(() => {
+        if (viewer !== v) return;
+        $('.viewer-msg', el).innerHTML = `Dosya burada açılamadı. <a href="${dl}" download>İndirerek açabilirsin.</a>`;
+      });
+  }
+
+  async function setupPages(v) {
+    const first = (await v.doc.getPage(1)).getViewport({ scale: 1 });
+    if (viewer !== v) return;
+    const n = v.doc.numPages;
+    $('.viewer-total', v.el).textContent = n;
+    $('.viewer-page', v.el).max = n;
+    $('.viewer-msg', v.el).remove();
+    const frag = document.createDocumentFragment();
+    for (let i = 1; i <= n; i++) {
+      const d = document.createElement('div');
+      d.className = 'vpage';
+      d.dataset.n = i;
+      d.style.aspectRatio = `${first.width} / ${first.height}`;
+      d.appendChild(document.createElement('canvas'));
+      frag.appendChild(d);
+      v.pages.push(d);
+    }
+    v.wrap.appendChild(frag);
+    sizePages(v);
+    v.observer = new IntersectionObserver(entries => entries.forEach(e => {
+      const i = Number(e.target.dataset.n);
+      if (e.isIntersecting) { v.visible.add(i); queueRender(v, i); } else { v.visible.delete(i); releasePage(e.target); }
+    }), { root: v.body, rootMargin: '900px 0px' });
+    v.pages.forEach(p => v.observer.observe(p));
+    if (v.start > 1) goToPage(v, v.start);
+  }
+
+  function sizePages(v) {
+    const fit = Math.min(900, v.body.clientWidth - 24);
+    v.wrap.style.width = `${Math.round(fit * ZOOMS[v.zoom])}px`;
+    v.token++;
+    v.visible.forEach(i => queueRender(v, i));
+  }
+
+  function queueRender(v, i) {
+    if (!v.queue.includes(i)) v.queue.push(i);
+    pumpRender(v);
+  }
+
+  async function pumpRender(v) {
+    if (v.busy || viewer !== v) return;
+    const i = v.queue.shift();
+    if (i === undefined) return;
+    const div = v.pages[i - 1];
+    if (!v.visible.has(i) || div.dataset.token === String(v.token)) return pumpRender(v);
+    v.busy = true;
+    try {
+      const page = await v.doc.getPage(i);
+      const base = page.getViewport({ scale: 1 });
+      div.style.aspectRatio = `${base.width} / ${base.height}`;
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      const vp = page.getViewport({ scale: (div.clientWidth / base.width) * dpr });
+      const canvas = div.querySelector('canvas');
+      canvas.width = Math.floor(vp.width);
+      canvas.height = Math.floor(vp.height);
+      const token = v.token;
+      await page.render({ canvasContext: canvas.getContext('2d'), viewport: vp }).promise;
+      if (v.visible.has(i)) { div.dataset.token = String(token); div.classList.add('ready'); } else releasePage(div);
+    } catch (e) { /* kapatıldı ya da sayfa çizilemedi */ }
+    v.busy = false;
+    pumpRender(v);
+  }
+
+  function releasePage(div) {
+    const c = div.querySelector('canvas');
+    c.width = 0; c.height = 0;
+    delete div.dataset.token;
+    div.classList.remove('ready');
+  }
+
+  function goToPage(v, n) {
+    const p = v.pages[Math.min(Math.max(n, 1), v.pages.length) - 1];
+    if (p) v.body.scrollTop = p.offsetTop - 12;
+  }
+
+  function updatePageNo(v) {
+    if (!v.pages.length) return;
+    const mid = v.body.scrollTop + v.body.clientHeight / 3;
+    let n = 1;
+    for (const p of v.pages) { if (p.offsetTop <= mid) n = Number(p.dataset.n); else break; }
+    const input = $('.viewer-page', v.el);
+    if (document.activeElement !== input) input.value = n;
+  }
+
+  function closeViewer() {
+    const v = viewer;
+    if (!v) return;
+    viewer = null;
+    if (v.observer) v.observer.disconnect();
+    if (v.task) v.task.destroy();
+    v.el.remove();
+    document.body.classList.remove('viewer-open');
+  }
+
+  // Telefonda "geri" görüntüleyiciyi kapatsın
+  window.addEventListener('popstate', () => closeViewer());
+  window.addEventListener('resize', () => {
+    clearTimeout(window.__vr);
+    window.__vr = setTimeout(() => { if (viewer && viewer.pages.length) sizePages(viewer); }, 200);
+  });
+  document.addEventListener('change', e => {
+    if (viewer && e.target.matches('.viewer-page')) goToPage(viewer, Number(e.target.value) || 1);
+  });
+
   // ---------- Olaylar ----------
   document.addEventListener('click', e => {
     const el = e.target.closest('[data-act]');
@@ -648,6 +862,17 @@
       case 'quiz-quit': renderResult(); break;
       case 'quiz-retry-wrong': startQuiz(quiz.log.filter(x => !x.ok).map(x => x.item.q)); break;
       case 'quiz-new': renderQuizSetup(); window.scrollTo(0, 0); break;
+      case 'view': openViewer(el.dataset.file, el.dataset.title, Number(el.dataset.page) || 1); break;
+      case 'viewer-close': history.back(); break;
+      case 'viewer-zoom': {
+        const z = Math.min(Math.max(viewer.zoom + Number(el.dataset.z), 0), ZOOMS.length - 1);
+        if (z === viewer.zoom || !viewer.pages.length) break;
+        const ratio = viewer.body.scrollTop / Math.max(viewer.body.scrollHeight, 1);
+        viewer.zoom = z;
+        sizePages(viewer);
+        viewer.body.scrollTop = ratio * viewer.body.scrollHeight;
+        break;
+      }
       case 'notes-download': {
         const blob = new Blob([notesText()], { type: 'text/plain;charset=utf-8' });
         const a = document.createElement('a');
@@ -704,6 +929,11 @@
   }
 
   document.addEventListener('keydown', e => {
+    if (viewer) {
+      if (e.key === 'Escape') { e.preventDefault(); history.back(); }
+      else if (e.key === 'Enter' && e.target.matches('.viewer-page')) goToPage(viewer, Number(e.target.value) || 1);
+      return;
+    }
     if (e.metaKey || e.ctrlKey || e.altKey) return;
     const t = e.target;
     if (t.closest('input, select, textarea')) return;

@@ -130,7 +130,8 @@ units: [
     fromPdf: {
       name: `Immanuel Wallerstein (ve ark.), <i>Sosyal Bilimleri Açın</i>, Bölüm I: "Onsekizinci Yüzyıldan 1945'e Kadar Sosyal Bilimlerin Tarihsel Kuruluşu" (s. 11–36)`,
       note: `Parantez içindeki sayfa numaraları kitabın sayfalarıdır. PDF sayfası = kitap sayfası − 10 (ör. s. 12 → PDF 2).`,
-      file: `materyal/2-hafta/Wallerstein_Sosyal_Bilimlerin_Tarihsel_Kurulusu.pdf`
+      file: `materyal/2-hafta/Wallerstein_Sosyal_Bilimlerin_Tarihsel_Kurulusu.pdf`,
+      pdfOffset: -10
     },
     html: `
 <h3>Sosyal bilim, modern dünyaya ait bir girişimdir <span class="ref">s. 12</span></h3>
@@ -651,7 +652,8 @@ units: [
     fromPdf: {
       name: `Zygmunt Bauman & Tim May, <i>Sosyolojik Düşünmek</i> (çev. Akın Emre Pilgir, Ayrıntı Yayınları), Giriş: "Sosyolojik Mercekleri Yaratmak" (s. 13–28)`,
       note: `Parantez içindeki sayfa numaraları kitabın sayfalarıdır. PDF sayfası = kitap sayfası + 3 (ör. s. 13 → PDF 16).`,
-      file: `materyal/5-hafta/Bauman_May_Sosyolojik_Dusunmek.pdf`
+      file: `materyal/5-hafta/Bauman_May_Sosyolojik_Dusunmek.pdf`,
+      pdfOffset: 3
     },
     html: `
 <h3>Disiplinli bir pratik olarak sosyoloji <span class="ref">s. 13–14</span></h3>
