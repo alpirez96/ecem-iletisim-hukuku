@@ -13,16 +13,87 @@
     { title: `İletişim Hukuku Vize Çalışma Notları`, kind: `Sunum · 153 slayt`, size: `1,3 MB`, file: `materyal/Iletisim_Hukuku_Vize_Calisma_Notlari.pptx` }
   ],
 
+onePager: [
+  { u: `giris`, items: [
+      `Hukuku ayıran: <b>maddi yaptırım</b>. Kaynaklar: yazılı · yazısız (örf ve adet) · yardımcı (içtihat).`,
+      `Hiyerarşi: <mark>Anayasa › MA Andlaşma › Kanun › KHK › Tüzük › Yönetmelik</mark>.`,
+      `Dallar: kamu · özel · karma (<b>iletişim hukuku karma</b>).`,
+      `Ceza ilkeleri: kanunilik, ölçülülük, eşitlik, bağlayıcılık (bilmemek mazeret değil), şahsilik.`
+  ] },
+  { u: `hak`, items: [
+      `Olay (doğum, ölüm) · fiil (suç / haksız fiil / hukuka uygun) · işlem (sözleşme, vasiyet).`,
+      `Hak ehliyeti = <b>yararlanma</b>; ana rahmine düşünce (sağ ve tam doğum şartıyla).`,
+      `Fiil ehliyeti = <b>kullanma</b>: 18 yaş + ayırt etme gücü (en önemli) + kısıtlı olmamak.`
+  ] },
+  { u: `medya`, items: [
+      `Kaynak · ileti · alıcı. Lasswell (1940'lar) · Mc Luhan: "küresel köy".`,
+      `Temel: Anayasa md. 28; kurallar tek yasada değil.`,
+      `İfade özgürlüğü sınırı: <b>kanunla, Anayasaya uygun, demokratik, ölçülü</b>.`
+  ] },
+  { u: `ozgurluk`, items: [
+      `1215 Magna Carta → 1679 → 1776 → 1789.`,
+      `Unsurlar: ulaşma, ifade, yayma · Kapsam: basın, görsel-işitsel, internet.`,
+      `İHEB 18–19 (1948) · AY 25, 26, 28 · <b>AY 13</b> genel sınır · AİHS 9 (izin rejimi serbest).`
+  ] },
+  { u: `basin`, items: [
+      `"Dördüncü kuvvet"; ilkeli (doğru, dürüst) / sorumlu (zarar verme, kamu yararı).`,
+      `Basın K. md. 2: süreli (gazete) / süresiz (kitap); yayıncı yayımlar, basımcı basar.`
+  ] },
+  { u: `yayincilik`, items: [
+      `Radyo 1927 · TV 1968 · TRT tekeli 1990'a kadar · RTÜK.`,
+      `5651: içerik (üretir) · yer (barındırır, <mark>24 saat</mark>) · erişim (TTNET; engeller).`
+  ] },
+  { u: `ceza`, items: [
+      `Basın suçu: basılmış eserle işlenen suç. RTV'de kurallar daha net.`,
+      `Platform = yer sağlayıcı; paylaşan = içerik sağlayıcı; bağlantıdan sorumluluk yok.`
+  ] },
+  { u: `kisilik`, items: [
+      `Para ile ölçülmez, devredilmez, mirasla geçmez, mutlak.`,
+      `Haber ölçütü: <mark>gerçeklik, güncellik, kamu yararı, ölçülülük</mark>.`,
+      `TMK 23–25 · TBK 49 · KVKK · 5651 · TCK.`
+  ] },
+  { u: `unutulma`, items: [
+      `Silme değil, <b>listelenmeme (delisting)</b>; devletin pozitif yükümlülüğü.`,
+      `8 şart: güncellik, kamu yararı, tarihsel, bilimsel, süre (1 yıl istenemez / 5 yıl istenebilir), ünlü mü, olgu/değer, halkın ilgisi.`,
+      `Arama motoru → KVKK / Sulh Ceza; şirketler yararlanamaz.`
+  ] },
+  { u: `cevap`, items: [
+      `Basın: <mark>2 ay → 3 gün → 15 gün</mark>. RTV: <mark>60 gün → 7 gün</mark> (aynı saat ve program).`,
+      `İnternet: <mark>2 gün → 1 hafta yayında → 15 gün</mark>. Cevap yazıdan uzun olamaz.`
+  ] },
+  { u: `hakaret`, items: [
+      `TCK 125 (sosyal medya 125/2): <b>3 ay – 2 yıl</b> hapis veya adli para cezası.`,
+      `Şikâyet <b>6 ay</b> · ekran görüntüsü · Başsavcılık · IP: ISS / BTK · uzlaştırma şart · tazminat ayrı.`
+  ] }
+],
+
 units: [
   {
     id: `giris`, no: 1, title: `Hukuka Giriş: Kurallar, Kaynaklar, Dallar`, slides: `Slayt 3–25`,
-    short: `<ul class="short-list">
-<li>Toplumsal kurallar: din, ahlak, görgü, örf ve adet, hukuk. Hukuku ayıran: <b>maddi yaptırım</b> (devletin kamu gücü).</li>
-<li>Kaynaklar: <b>yazılı</b> (Anayasa, kanun, milletlerarası antlaşma, KHK, tüzük, yönetmelik), <b>yazısız</b> (örf ve adet), <b>yardımcı</b> (bilimsel ve yargısal içtihat).</li>
-<li>Normlar hiyerarşisi: <mark>Anayasa › Milletlerarası Andlaşmalar › Kanun › KHK › Tüzük › Yönetmelik</mark>.</li>
-<li>Hukuk dalları: kamu, özel, karma. <b>İletişim Hukuku karma hukuktur.</b></li>
-<li>Ceza hukuku ilkeleri: kanunilik, ölçülülük, eşitlik, kanunların bağlayıcılığı, cezaların şahsiliği.</li>
-<li>Vergi: adalet, genellik, kanunilik. Medeni hukuk: kişiler, aile, miras, eşya; ilkeler: dürüstlük, iyi niyet, ispat yükü.</li>
+    files: [`materyal/Iletisim_Hukuku_Vize_Calisma_Notlari.pptx`],
+    short: `<h4>Toplumsal kurallar ve yaptırım</h4>
+<ul class="short-list">
+<li>Toplum hayatını düzenleyen kurallar: <b>din, ahlak, görgü, örf ve adet, hukuk</b>.</li>
+<li>Örf ve adet: uzun süredir uygulanan, kendiliğinden doğan, toplumun zorunlu saydığı kurallar (örn. <i>kına</i>). Din: uyulursa sevap, uyulmazsa günah. Ahlak ve görgü: <b>manevi</b> yaptırım (ayıplanma, dışlanma; "görgüsüz, kaba" nitelendirilme).</li>
+<li>Hukuku diğerlerinden ayıran en önemli özellik: <mark>maddi yaptırım</mark>. Yaptırım (müeyyide), kurala uyulmadığında karşılaşılan tepkidir; maddi yaptırımda devlet <b>kamu gücünü</b> kullanarak ihlal edenin sonuca katlanmasını sağlar.</li>
+<li>Hukukun amaçları: toplumsal güven ve güvenlik, düzen, ihtiyaçları karşılamak, eşitlik, adalet, barış, özgürlük.</li>
+</ul>
+<h4>Kaynaklar ve normlar hiyerarşisi</h4>
+<ul class="short-list">
+<li><b>Yazılı:</b> Anayasa, kanun, milletlerarası antlaşma, KHK, tüzük, yönetmelik · <b>Yazısız:</b> örf ve adet · <b>Yardımcı:</b> bilimsel ve yargısal içtihat.</li>
+<li>Normlar hiyerarşisi = kurallar arasındaki «öncelik» ilişkisi; normları yığın olmaktan çıkarıp bütüne dönüştürür: <mark>Anayasa › Milletlerarası Andlaşmalar › Kanun › KHK › Tüzük › Yönetmelik</mark> (diğerleri: yönerge, tebliğ, genelge, talimat).</li>
+</ul>
+<h4>Hukuk dalları</h4>
+<ul class="short-list">
+<li><b>Kamu:</b> Anayasa, idare, ceza, vergi, yargılama, devletler genel, icra-iflas · <b>Özel:</b> medeni, ticaret, borçlar, devletler özel · <b>Karma:</b> FSEK, iş, bankacılık, <mark>iletişim hukuku</mark>.</li>
+<li><b>Anayasa:</b> kişi hak ve hürriyetleri, devletin teşkilatı, yasama-yürütme-yargının işleyişi · <b>İdare:</b> yürütme içindeki kamu hizmetlerinin teşkilatı ve işleyişi · <b>Ceza:</b> suçlar ve cezalar · <b>Vergi:</b> devlet–kişi vergi hak ve ödevleri · <b>İcra-İflas:</b> borcunu kendi isteğiyle ödemeyene ve yerine getirilmeyen mahkeme kararına ne yapılacağı.</li>
+<li><b>Devletler genel:</b> devlet–devlet, devlet–uluslararası kuruluş ilişkileri · <b>Devletler özel:</b> farklı milletten bireylerin ilişkileri ve hangi ülke hukukunun uygulanacağı · <b>Ticaret:</b> ticari ilişkiler · <b>Borçlar:</b> kişiler arası borç ilişkileri.</li>
+</ul>
+<h4>İlkeler</h4>
+<ul class="short-list">
+<li>Ceza: <b>kanunilik</b> (kanunun açıkça suç saymadığı fiile ceza yok) · <b>ölçülülük</b> (fiilin ağırlığıyla orantılı) · <b>eşitlik</b> (ayrıcalık yok) · <b>kanunların bağlayıcılığı</b> ("ceza kanunlarını bilmemek mazeret sayılmaz") · <b>cezaların şahsiliği</b> ("kimse başkasının fiilinden sorumlu tutulamaz").</li>
+<li>Vergi: adalet (gelire göre), genellik (din, ırk, sınıf, cinsiyet ayrımı yok), kanunilik (kanunla konur, kaldırılır, düzenlenir).</li>
+<li>Medeni hukuk: <b>kişiler</b> (ehliyet, akrabalık, yerleşim yeri) · <b>aile</b> (nişan, evlilik, boşanma, velayet, soy bağı) · <b>miras</b> (vasiyet, paylaşım) · <b>eşya</b> (eşya üzerindeki haklar). İlkeler: dürüstlük, iyi niyet (var sayılır), ispat yükü (herkes iddiasını ispatlar).</li>
 </ul>`,
     html: `
 <p class="lead">Hukuk, günlük yaşamdaki eylemlerimizin çoğunu düzenleyen kurallar bütünüdür. Doğum ve ölüm bile hukuku ilgilendirir; bu yüzden hukukçu olsun olmasın <mark>herkesi ilgilendiren</mark> bir bilim dalıdır.</p>
@@ -124,12 +195,22 @@ units: [
   },
   {
     id: `hak`, no: 2, title: `Hak, Kişilik ve Ehliyet`, slides: `Slayt 26–37`,
-    short: `<ul class="short-list">
-<li>Hak: hukuk düzeninin tanıdığı yetki, korunan menfaat. <b>Özel haklar</b> kişi–kişi; <b>kamu hakları</b> kişi–devlet (kişinin hakları, sosyal-ekonomik, siyasi).</li>
-<li>Hakları doğuran olgular: <b>hukuki olay</b> (doğum, ölüm), <b>hukuki fiil</b> (aykırı: suç / haksız fiil; uygun), <b>hukuki işlem</b> (vasiyet, sözleşme).</li>
-<li>Kişi: gerçek kişi / tüzel kişi (dernek, vakıf, şirket).</li>
-<li><b>Hak ehliyeti:</b> medeni haklardan yararlanma; sağ ve tam doğmak koşuluyla ana rahmine düşüldüğü anda.</li>
-<li><b>Fiil ehliyeti:</b> medeni hakları kullanma; şartlar: ergin (18), <mark>ayırt etme gücü (en önemlisi)</mark>, kısıtlı olmamak.</li>
+    files: [`materyal/Iletisim_Hukuku_Vize_Calisma_Notlari.pptx`],
+    short: `<h4>Hak ve hakları doğuran olgular</h4>
+<ul class="short-list">
+<li>Hak: hukuk düzeninin kişilere tanıdığı yetkiler ve korunan menfaatler; "hukuk" kelimesi "hak"tan türemiştir.</li>
+<li><b>Özel haklar:</b> kişiler arası, özel hukuktan doğar, eşitlik ilkesi geçerli. <b>Kamu hakları:</b> kişi–devlet; üçe ayrılır: kişinin hakları, sosyal ve ekonomik haklar, siyasi haklar.</li>
+<li><b>Hukuki olay:</b> iradeye bakılmaksızın sonuç doğurur (doğum, ölüm).</li>
+<li><b>Hukuki fiil:</b> iradi, ama sonuç her zaman istenen olmayabilir. <i>Hukuka aykırı fiil:</i> ceza hukukunda suç (cürüm veya kabahat; örn. öldürme), özel hukukta haksız fiil (örn. başkasının malına zarar). <i>Hukuka uygun fiil:</i> hukukun emrettiğini yapmak, yasakladığından kaçınmak.</li>
+<li><b>Hukuki işlem:</b> bir veya birden çok kişinin irade beyanıyla hukuki sonuç yaratması (vasiyetname düzenlemek, sözleşme yapmak).</li>
+</ul>
+<h4>Kişilik ve ehliyet</h4>
+<ul class="short-list">
+<li>Bugün her insan kişidir; <b>tam ve sağ doğum</b> hak sahibi olmaya yeter. <b>Gerçek kişi:</b> ayrım gözetmeksizin bütün insanlar · <b>Tüzel kişi:</b> örgütlenmiş kişi veya mal toplulukları (dernek, vakıf, şirket, kurum ve kuruluşlar).</li>
+<li><b>Hak ehliyeti:</b> haklara ve borçlara sahip olabilme, medeni haklardan <i>yararlanma</i>; <mark>sağ ve tam doğmak koşuluyla ana rahmine düşüldüğü anda</mark> kazanılır.</li>
+<li><b>Fiil ehliyeti:</b> kendi işlemleriyle hak ve borç yaratabilme, medeni hakları <i>kullanma</i>. Şartlar: <mark>ergin olmak (18) · ayırt etme gücü · kısıtlı olmamak</mark>.</li>
+<li>Ayırt etme gücü <b>en önemli</b> şarttır; yoksa kişi tam ehliyetsizdir, işlemleri hukuki sonuç doğurmaz. Olmadığı haller: yaş, akıl hastalığı, akıl zayıflığı, sarhoşluk.</li>
+<li>Kısıtlılık: ergin kişinin fiil ehliyetinin <b>mahkeme kararıyla</b> sınırlandırılması. Sebepler: akıl hastalığı/zayıflığı · savurganlık, alkol-uyuşturucu bağımlılığı, kötü yaşama tarzı, kötü yönetim · <b>1 yıl ve üzeri</b> hapis · yaşlılık, sakatlık, deneyimsizlik nedeniyle kendi isteği.</li>
 </ul>`,
     html: `
 <h3>Hak kavramı</h3>
@@ -179,12 +260,25 @@ units: [
   },
   {
     id: `medya`, no: 3, title: `İletişim ve Medya Hukukuna Giriş`, slides: `Slayt 38–53`,
-    short: `<ul class="short-list">
-<li>Medya hukuku: kitle iletişiminin kurallarını, araçların yapısını ve ilişkilerini düzenler.</li>
-<li>İletişimin ögeleri: kaynak, ileti, alıcı. "Kitle iletişimi": <b>Lasswell</b> (1940'lar); "küresel köy": <b>Mc Luhan</b>.</li>
-<li>Kapsam: basın, radyo-TV, sinema, internet. Temeli <b>Anayasa</b> (md. 28); kurallar tek bir yasada toplanmamış.</li>
-<li>En önemli kavram: <mark>ifade özgürlüğü</mark> (bilgi edinme hakkı dahil); sınırsız değil.</li>
-<li>Sınırlama şartları: kanunla, Anayasaya uygun, demokratik toplum gereklerine uygun, ölçülü.</li>
+    files: [`materyal/Iletisim_Hukuku_Vize_Calisma_Notlari.pptx`],
+    short: `<h4>İletişim ve kitle iletişimi</h4>
+<ul class="short-list">
+<li>Medya hukuku: kitle iletişiminde uyulacak kurallar ile araçların yapısını ve ilişkilerini düzenleyen hukuk kuralları bütünü.</li>
+<li>Biyolojik varlık olan insanı sosyal varlığa dönüştüren iletişimdir. TDK: "duygu, düşünce veya bilgilerin akla gelebilecek her türlü yolla başkalarına aktarılması"; teknik anlamda telefon, telgraf, TV, radyo ile haberleşme. Ortak nokta: bilgi kadar <b>düşünce ve tutumlar</b> da aktarılır.</li>
+<li>Ögeler: <b>kaynak, ileti, alıcı</b> (biri yoksa kurgu eksik); iletişim durağan değil, <b>dinamik</b> bir süreç.</li>
+<li>Kitle iletişimi: matbaa ve gazete → 19. yüzyılda teknolojiyle yaygınlaşma → radyo, sinema, TV, internet. Kavramı ilk kullanan: <mark>Harold D. Lasswell, 1940'lar</mark> (siyasal erk ve propaganda). "Küresel köy" benzetmesi: <b>Mc Luhan</b>.</li>
+</ul>
+<h4>Medya hukukunun temeli</h4>
+<ul class="short-list">
+<li>Kapsam: basın yayın, radyo-TV, sinema ve internet yayıncılığı.</li>
+<li>Temel: <b>Anayasa</b>; md. 28 "Basın hürdür, sansür edilemez. Devlet, basın ve haber alma hürriyetini sağlayacak tedbirleri alır." Kurallar <b>tek bir yasada değil</b>, birçok kanun ve yönetmelikte.</li>
+<li>Temel kanunlar: Basın K., TRT Kurumu K., RTV Kuruluş ve Yayın Hizmetleri K., Bilgi Edinme Hakkı K., 5651 sayılı İnternet K., FSEK.</li>
+</ul>
+<h4>İfade özgürlüğü</h4>
+<ul class="short-list">
+<li>Medya hukukunun <b>en önemli</b> kavramı; kamuoyunun bilgi edinme hakkını içerir. Bilgi edinme, yayma, eleştirme, yorumlama ve eser yaratma hakları buradan doğar. Sınırsız değildir.</li>
+<li>Sınırlayan haller: ulusal güvenlik, ülke bütünlüğü, kamu emniyeti, suç işlenmesi veya düzensizliğin önlenmesi, genel sağlık.</li>
+<li>Sınırlama şartları: <mark>kanunla, Anayasaya uygun, demokratik toplum düzeninin gereklerine uygun, ölçülü</mark>; aksi hâlde insan hakları ihlali.</li>
 </ul>`,
     html: `
 <p class="lead"><b>Medya hukuku:</b> Kitle iletişiminde uyulması gereken kuralları, kitle iletişim araçlarının yapısını ve ilişkilerini düzenleyen hukuk kuralları bütünü.</p>
@@ -242,12 +336,27 @@ units: [
   },
   {
     id: `ozgurluk`, no: 4, title: `Kitle İletişim Özgürlüğünün Genel Teorisi`, slides: `Slayt 54–70`,
-    short: `<ul class="short-list">
-<li>Özgürlükler sınırsız değildir. Tarihsel belgeler: 1215 Magna Carta → 1679 Haklar Bildirisi → 1776 → 1789.</li>
-<li>İnsan hakları devlet güvencesine kavuşunca <b>"temel haklar"</b> olur; ihlalde AYM'ye bireysel başvuru.</li>
-<li>Kitle iletişim özgürlüğü: bilgi, haber, fikirlerin kitle iletişim araçlarıyla serbestçe elde edilmesi ve yayılması; düşünce özgürlüğüyle <b>birbirini tamamlar</b>.</li>
-<li>Unsurlar: ulaşabilme, ifade, yayabilme. Kapsam: basın, görsel-işitsel, internet özgürlüğü.</li>
-<li>Maddeler: İHEB 18–19 (10 Aralık 1948) · Anayasa 25, 26, <mark>28 (basın hürdür)</mark> · AİHS 9 · genel sınırlama <b>Anayasa 13</b>.</li>
+    files: [`materyal/Iletisim_Hukuku_Vize_Calisma_Notlari.pptx`],
+    short: `<h4>Özgürlük ve temel haklar</h4>
+<ul class="short-list">
+<li>Özgürlük: kısıtlama ve zorlama olmadan düşünme ve davranma. Sınırsız değildir: toplumsal hayatta sınırsız özgürlük olmaz; "Yalnızlık söz konusu değilse özgürlük sınırlıdır."</li>
+<li>Tarihsel belgeler: <mark>1215 Magna Carta → 1679 Haklar Bildirisi → 1776 Amerikan Bağımsızlık Bildirgesi → 1789 Fransız Devrimi</mark>.</li>
+<li>Paradoks: kamu gücünün ihlaline karşı AYM'ye bireysel başvuru yapılır, ama hakların korunması ve kararların uygulanması da kamu gücü gerektirir. İnsan hakları devletten önce vardır; devlet güvencesine kavuşunca <b>"temel haklar"</b> olur.</li>
+</ul>
+<h4>Kitle iletişim özgürlüğü</h4>
+<ul class="short-list">
+<li>Kitle iletişim araçlarıyla doğdu. Tanım: bilgi ve haberlerin, fikir ve kanaatlerin <mark>kitle iletişim araçlarıyla serbestçe elde edilmesi ve yayılması</mark>; hem bireysel hem toplu kullanılır.</li>
+<li>Düşünce ve ifade özgürlüğüyle <b>birbirini tamamlar</b> (biri olmadan diğeri olmaz). Toplu açıklama dernek ve sendikalara katılmakla olur; toplanma ve dernek kurma, din ve vicdan, eğitim ve bilim özgürlüklerini de kapsar.</li>
+<li>Unsurlar: haber, bilgi, düşünce ve kanılara <b>ulaşabilme, ifade, yayabilme</b> hakkı. Kapsam: basın, görsel-işitsel iletişim, internet özgürlüğü.</li>
+</ul>
+<h4>Düzenlemeler</h4>
+<ul class="short-list">
+<li><b>İHEB</b> (BM, <mark>10 Aralık 1948</mark>; Türkiye taraf): md. 18 düşünce, vicdan ve din · md. 19 düşünce ve anlatım (ülke sınırı gözetmeksizin bilgi araştırmak, elde etmek, yaymak).</li>
+<li><b>Anayasa 25:</b> düşünce ve kanaat; kimse açıklamaya zorlanamaz, kınanamaz, suçlanamaz · <b>26:</b> söz, yazı, resimle tek başına veya toplu açıklama ve yayma; resmî makam müdahalesi olmadan haber/fikir alma-verme · <b>28:</b> basın hürdür, sansür edilemez; basımevi izne ve mali teminata bağlanamaz.</li>
+<li><b>AY 26 sınırlama amaçları:</b> millî güvenlik, kamu düzeni ve güvenliği, Cumhuriyetin temel nitelikleri, bölünmez bütünlük, suçların önlenmesi ve suçluların cezalandırılması, Devlet sırrı, başkalarının şöhret veya hakları, özel ve aile hayatı, meslek sırları, yargılama görevi.</li>
+<li><b>AY 28 sorumluluk:</b> Devletin güvenliğini ve bölünmez bütünlüğünü tehdit eden, suça, ayaklanma veya isyana teşvik eden ya da Devletin gizli bilgilerine ilişkin yazıyı yazan, bastıran, basan ve başkasına veren sorumludur.</li>
+<li><b>AİHS:</b> md. 9 düşünce, vicdan ve din (din değiştirme dahil); ifade özgürlüğü hükmü radyo, TV ve sinemayı <i>izin rejimine</i> tabi tutmaya engel değil.</li>
+<li>Kitle iletişim özgürlüğü yalnızca Anayasa'daki sebeplerle sınırlanır. <b>AY 13</b> genel kural: temel haklar <mark>ancak kanunla</mark> ve ilgili maddelerdeki nedenlerle sınırlanabilir; 26 ve 28 hangi neden ve usulle sınırlanacağını düzenler.</li>
 </ul>`,
     html: `
 <h3>Özgürlük ve sınırları</h3>
@@ -317,12 +426,25 @@ units: [
   },
   {
     id: `basin`, no: 5, title: `Basın Hukukunun Temelleri`, slides: `Slayt 71–83`,
-    short: `<ul class="short-list">
-<li>Dar ve teknik anlamda basın: düşüncelerin basılmış eserlerle yazılı olarak kamuoyuna açıklandığı kitle iletişim aracı; <b>"dördüncü kuvvet"</b>.</li>
-<li><b>İlkeli</b> yayıncılık: doğruyu dürüstçe ve etik aktarmak. <b>Sorumlu</b> yayıncılık: zarar vermemek, kamu yararı.</li>
-<li>Kavramlar Basın Kanunu <b>md. 2</b>'de. Basılmış eser haber ajansı yayınlarını da kapsar.</li>
-<li>Süreli yayın: gazete, dergi (yaygın, bölgesel, yerel). Süresiz yayın: bir defalık kitap.</li>
-<li>Eser sahibi içeriği oluşturur; <b>yayıncı</b> yayımlar; <b>basımcı</b> basar/çoğaltır.</li>
+    files: [`materyal/Iletisim_Hukuku_Vize_Calisma_Notlari.pptx`],
+    short: `<h4>Basın kavramı</h4>
+<ul class="short-list">
+<li><b>Dar anlam:</b> belirli aralıklarla çıkan gazete, dergi gibi basılmış eserler. <b>Geniş anlam:</b> düşüncelerin sınırsız sayıda çoğaltılıp kamuoyuna açıklanması (basın kurumları ve görevlileri dahil). <b>Dar ve teknik anlam:</b> düşüncelerin basılmış eserlerle yazılı olarak kamuoyuna açıklandığı kitle iletişim aracı.</li>
+<li>İfade özgürlüğünün aracı; ilkeli ve sorumlu yayıncılıkla iktidarı denetleyip özgürlükleri koruduğu için yasama, yürütme ve yargının yanında <mark>"dördüncü kuvvet"</mark>.</li>
+</ul>
+<h4>İlkeli ve sorumlu yayıncılık</h4>
+<ul class="short-list">
+<li>Tüm medya organlarının (basın, TV, radyo, internet, sosyal medya) uyması gereken etik, hukuki ve toplumsal sorumluluk kuralları.</li>
+<li><b>İlkeli:</b> doğruluk ve tarafsızlık (doğrulanabilir) · şeffaflık (kaynak saklamamak, manipülasyon yok) · özel hayata saygı · toplumsal değerlere uyum (ayrımcılık, nefret söylemi yok) · editoryal bağımsızlık (reklam ile haber ayrı, gizli reklam yok).</li>
+<li><b>Sorumlu:</b> kamu yararı (reyting değil bilgilendirme) · hesap verebilirlik (düzeltme ve özür) · çocuk ve hassas grupların korunması · reklam etiğine uyum (aldatıcı reklam yok).</li>
+</ul>
+<blockquote>Kısaca, ilkeli yayıncılık "doğruyu, dürüstçe ve etik kurallara bağlı kalarak aktarmak", sorumlu yayıncılık ise "topluma ve bireylere zarar vermemek, kamu yararını gözetmek" demektir.</blockquote>
+<h4>Basın Kanunu kavramları (md. 2)</h4>
+<ul class="short-list">
+<li>Basın yayının <b>en önemli</b> yasal düzenlemesi Basın Kanunu; md. 2'deki kavramlar: basılmış eser, yayım, süreli / yaygın süreli yayın, yayın türü, süresiz yayın, eser sahibi, yayıncı, basımcı, tüzel kişi temsilcisi.</li>
+<li><b>Basılmış eser:</b> basılan veya çoğaltılan yazı, resim vb. eserler + haber ajansı yayınları.</li>
+<li><b>Süreli yayın:</b> ayrı bölümler halinde, genellikle numaralı, bitişi belirsiz (gazete, dergi); yaygın, bölgesel, yerel. <b>Süresiz yayın:</b> belli aralıkla çıkmayan, bir defalık kitap türü eser.</li>
+<li><b>Eser sahibi</b> içeriği oluşturur · <b>yayıncı</b> basılmış eser hâline getirip yayımlar · <b>basımcı</b> basar veya çoğaltır.</li>
 </ul>`,
     html: `
 <h3>Basın kavramı</h3>
@@ -366,11 +488,19 @@ units: [
   },
   {
     id: `yayincilik`, no: 6, title: `Radyo-Televizyon ve İnternet Yayıncılığı`, slides: `Slayt 84–95`,
-    short: `<ul class="short-list">
-<li>İlk radyo <b>1927</b>, ilk TV <b>1968</b>; TRT tekeli <b>1990</b>'a kadar.</li>
-<li>RTV Kuruluş ve Yayın Hizmetleri Kanunu: RTÜK'ün kuruluşu, görev ve yetkileri; isteğe bağlı yayınlar da kapsamda.</li>
-<li>İnternette en kapsamlı düzenleme: <mark>5651 sayılı Kanun</mark>.</li>
-<li><b>İçerik sağlayıcı</b> üretir/sağlar · <b>yer sağlayıcı</b> barındırır, suç içeriğini <mark>24 saatte</mark> kaldırır · <b>erişim sağlayıcı</b> (TTNET) bildirilen içeriğe ve alternatif yollara erişimi engeller.</li>
+    files: [`materyal/Iletisim_Hukuku_Vize_Calisma_Notlari.pptx`],
+    short: `<h4>Radyo ve televizyon</h4>
+<ul class="short-list">
+<li>Türkiye'de ilk radyo <mark>1927</mark>, ilk TV <mark>1968</mark>; <b>1990</b>'a kadar TRT eliyle devlet tekeli, sonra özel televizyonlar.</li>
+<li><b>TRT Kanunu:</b> elektromanyetik dalgayla yurt içine ve dışına yapılan radyo-TV yayınlarının esasları.</li>
+<li><b>RTV Kuruluş ve Yayın Hizmetleri Kanunu:</b> yayınları ve <b>RTÜK</b>'ün kuruluş, görev, yetki ve sorumluluklarını düzenler; isteğe bağlı yayınlar dahil. Özel yayıncılar hisse devri, birleşme ve devralmaları üst kurula bildirir; logo ve çağrı işareti zorunlu. Ayrıca ticari iletişim, reklam, tele alışveriş, sponsorluk, ürün yerleştirme.</li>
+</ul>
+<h4>İnternet (5651 sayılı Kanun)</h4>
+<ul class="short-list">
+<li>Geniş kitleye ulaşması, zaman ve mekândan bağımsızlığı düzenlemeyi gerektirdi. Kaynaklar: 5651, TCK, FSEK. 5651 internetle ilgili <mark>en kapsamlı düzenleme</mark>: aktörlerin sorumlulukları, erişimin engellenmesi, içeriğin çıkarılması ve cevap hakkı.</li>
+<li><b>İçerik sağlayıcı:</b> bilgi veya veriyi üreten, değiştiren, sağlayan (üyelikli sitede paylaşım yapan üye).</li>
+<li><b>Yer sağlayıcı:</b> içerikleri barındıran sistemi sağlayan/işleten (web adresinin sahibi). İçeriği kontrol etmek zorunda değil; suç teşkil eden içeriği haberdar edilince <mark>24 saat</mark> içinde kaldırır; trafik bilgisini saklar, doğruluğunu, bütünlüğünü ve güvenliğini sağlar.</li>
+<li><b>Erişim sağlayıcı:</b> internete erişim sağlayan (TTNET, Turkcell Superonline). Kontrol yükümlülüğü yok; bildirilen hukuka aykırı içeriğe ve <b>alternatif erişim yollarına</b> erişimi engeller.</li>
 </ul>`,
     html: `
 <h3>Radyo ve televizyon</h3>
@@ -429,12 +559,24 @@ Radyo-TV yayınlarını ve <mark>Radyo ve Televizyon Üst Kurulu'nun</mark> kuru
   },
   {
     id: `ceza`, no: 7, title: `Medyada Cezai Sorumluluk ve Suç Tipleri`, slides: `Slayt 96–104`,
-    short: `<ul class="short-list">
-<li>Basın suçu: suç niteliğindeki eylemin basılmış eserler yoluyla işlenmesi.</li>
-<li>RTV'de ilkeler basına göre daha net: yayınlar daha hızlı ve daha geniş kitleye yayılır.</li>
-<li>İçerik sağlayıcı kendi içeriğinden sorumlu, bağlantı verdiği içerikten değil.</li>
-<li><mark>Sosyal medya platformu = yer sağlayıcı</mark>; platformda paylaşan kişi = içerik sağlayıcı.</li>
-<li>TCK'daki medya suçları: hakaret, özel hayatın gizliliğini ihlal, suçu övme, kin ve düşmanlığa tahrik, müstehcenlik, iftira…</li>
+    files: [`materyal/Iletisim_Hukuku_Vize_Calisma_Notlari.pptx`],
+    short: `<h4>Basın ve yayın</h4>
+<ul class="short-list">
+<li>Basın suçu: suç niteliği olan eylemin <b>basılmış eserler yoluyla</b> işlenmesi (Basın Kanunu'ndaki suçlar + TCK'daki bazı suçların basın yoluyla işlenmesi).</li>
+<li>RTV'de Basın Kanunu'na göre <b>daha net ilkeler ve yasaklar</b> var: yayınlar daha hızlı, daha geniş kitleye yayılır ve kolay ulaşılır.</li>
+<li>Yayın hizmetleri: Devletin varlığına, bölünmez bütünlüğüne, Atatürk ilke ve inkılaplarına karşıt olamaz · ırk, din, dil, sınıf, cinsiyet, mezhep, bölge ayırarak kin ve nefrete tahrik edemez · özel hayata ve şerefe saygı dışına çıkamaz (aşağılama, karalama, iftira yok).</li>
+<li>Terörü destekleyemez, örgütleri haklı/güçlü gösteremez · suça teşvik edemez, suçu ve suçluyu övemez, suç metodu öğretemez · zayıf, çocuk ve engellilere şiddeti özendiremez · sigara, alkol, uyuşturucu ve kumarı özendiremez.</li>
+</ul>
+<h4>İnternette sorumluluk</h4>
+<ul class="short-list">
+<li>Hakaret, telif ihlali, şiddet içeriği gibi ihlallerde sorumlular 5651'e göre <b>içerik, yer ve erişim sağlayıcılar</b>.</li>
+<li>İçerik sağlayıcı kendi içeriğinden sorumlu; <mark>bağlantı verdiği başkasına ait içerikten sorumlu değil</mark>.</li>
+<li>Yer sağlayıcı hukuka aykırı içerikten haberdar edilince teknik imkân ölçüsünde kaldırır. Erişim sağlayıcı erişimi engeller; trafik bilgisinin doğruluğunu, bütünlüğünü ve gizliliğini sağlar.</li>
+<li>Dikkat: Facebook, Twitter, Instagram, YouTube, LinkedIn <b>yer sağlayıcıdır</b>; platforma üye olup paylaşan kişi <b>içerik sağlayıcıdır</b>.</li>
+</ul>
+<h4>TCK'daki medya suçları</h4>
+<ul class="short-list">
+<li>Hakaret, haberleşmenin gizliliğini ihlal, konuşmaların dinlenmesi ve kaydı, özel hayatın gizliliğini ihlal, suça tahrik, suçu ve suçluyu övme, halkı kin ve düşmanlığa tahrik, aşağılama ve kanunlara uymamaya tahrik, müstehcenlik, iftira, gizliliğin ihlali, Türk Milletini ve Devlet kurumlarını aşağılama.</li>
 </ul>`,
     html: `
 <p class="lead">Medyada cezai sorumluluk; basın-yayın, radyo ve televizyon faaliyetleri ile internet yayınlarından doğabilecek cezai sorumlulukları kapsar.</p>
@@ -475,12 +617,25 @@ Radyo-TV yayınlarını ve <mark>Radyo ve Televizyon Üst Kurulu'nun</mark> kuru
   },
   {
     id: `kisilik`, no: 8, title: `Yazılı ve Görsel Medyada Kişilik Hakları`, slides: `Slayt 105–120`,
-    short: `<ul class="short-list">
-<li>Kişilik hakları: para ile ölçülemez, devredilemez, mirasçılara geçmez, <b>mutlak</b>.</li>
-<li>Maddi (bedensel, mülkiyet) ve manevi kişilik hakları; zarara göre maddi / manevi tazminat.</li>
-<li>Korunan değerler: ad, hayat-sağlık-vücut tamlığı, haysiyet-onur, resim-ses, sırlar, özel hayat.</li>
-<li>Haberin hukuka uygunluğu: <mark>gerçeklik, güncellik, kamu yararı, ölçülülük</mark>.</li>
-<li>Düzenlemeler: TMK 23–25, TBK 49, KVKK, TTK, FSEK, 5651, TCK.</li>
+    files: [`materyal/Iletisim_Hukuku_Vize_Calisma_Notlari.pptx`],
+    short: `<h4>Kişilik hakkı</h4>
+<ul class="short-list">
+<li>İnsan olmaktan doğan, <mark>para ile ölçülemeyen, devredilemeyen, mirasçılara geçmeyen, mutlak</mark> haklar; dayanağı Anayasa (maddi ve manevi varlığı geliştirme hakkı). Kapsar: ses, görüntü, yaşam, sağlık, isim, özel hayat, şeref ve şahsiyet.</li>
+<li><b>Maddi:</b> bedensel ve mülkiyet hakları. <b>Manevi:</b> manevi varlığı geliştirme, din ve vicdan, haberleşme özgürlüğü, özel yaşamın gizliliği.</li>
+<li>Yayınla saldırılar çoğunlukla isim, resim, kişilik, saygınlık ve özel hayata yönelir; maddi zarar → maddi, manevi zarar → manevi tazminat.</li>
+</ul>
+<h4>Korunan değerler</h4>
+<ul class="short-list">
+<li><b>Ad:</b> öz ad ve soyadı; ayrıca müstear ad, lakap, kısaltılmış ad, e-posta ve telgraf adresi.</li>
+<li><b>Hayat, sağlık, vücut tamlığı</b> (fiziki ve ruhsal): rıza doktorun müdahalesini hukuka uygun kılar; acil durumda rıza alınamıyorsa müdahale hukuka aykırı değil; hasta, zorunlu haller dışında tedaviyi reddedebilir.</li>
+<li><b>Haysiyet ve onur:</b> tanınmış kişilerde koruma sınırı gevşer; haberin hukuka uygunluk ölçütleri <mark>gerçeklik, güncellik, kamu yararı, ölçülülük</mark> (hakaret içeren söz olmamalı).</li>
+<li><b>Resim ve ses:</b> bozarak, ticari, reklam veya istismar amaçlı çoğaltmak ihlal; haber fotoğrafında yer almak ihlal değil (haber alma ihtiyacı).</li>
+<li><b>Sırlar:</b> sağlık durumu, ticari sırlar, gizli çekim görüntüleri. <b>Özel hayat:</b> bilinmesinde kamu yararı olanın açıklanması hukuka aykırı değil; kamuya mal olmuş kişilerin özel alanı dar.</li>
+<li>Kişisel veri ilkeleri: güncel olma, açık ve meşru amaç, amaçla bağlantılı ve ölçülü, amaca uygun süre.</li>
+</ul>
+<h4>Düzenlemeler</h4>
+<ul class="short-list">
+<li><b>TMK 23–25, TBK 49</b>, KVKK, TTK, FSEK, 5651, TCK. İhlallerin en çok yaşandığı mecra internet olduğu için <b>5651</b> özel önemde; içeriğin kaldırılması ve erişimin engellenmesi mekanizmasını getirdi.</li>
 </ul>`,
     html: `
 <h3>Kişilik hakkı nedir?</h3>
@@ -521,12 +676,25 @@ Radyo-TV yayınlarını ve <mark>Radyo ve Televizyon Üst Kurulu'nun</mark> kuru
   },
   {
     id: `unutulma`, no: 9, title: `Unutulma Hakkı`, slides: `Slayt 121–132`,
-    short: `<ul class="short-list">
-<li>Hukuka uygun içeriğin arama motorlarında <mark>listelenmemesini (delisting)</mark> isteme hakkı; içeriğin silinmesi değil.</li>
-<li>Mevzuatta olmasa da devletin <b>pozitif yükümlülüğü</b>.</li>
-<li>Şartlar: güncelliğini yitirme, kamu yararı yok, tarihsel/bilimsel değil, yayında kalma süresi, ünlü olup olmama, olgu mu değer yargısı mı, halkın ilgisi.</li>
-<li>Makul süre somut olaya göre (örn. 1 yıl istenemez, 5 yıl istenebilir).</li>
-<li>Başvuru: arama motoru → KVKK veya Sulh Ceza Hakimliği. Şirketler yararlanamaz.</li>
+    files: [`materyal/Iletisim_Hukuku_Vize_Calisma_Notlari.pptx`],
+    short: `<h4>Tanım</h4>
+<ul class="short-list">
+<li>Kişinin kendisiyle ilgili haber, fotoğraf, video vb.nin <b>arama sonuçlarında</b> görünmemesini isteme hakkı.</li>
+<li><mark>Kaldırma değil, listelenmeme (delisting)</mark>: içeriğin internette bulunması hukuka uygundur; yalnızca arama motorunda çıkmaz.</li>
+<li>Örnek: beş yıl önceki bir gazete haberi, kişinin adı arandığında artık görünmez. Politikacı, devlet adamı ve geçmiş olaylarla anılan vatandaşlar için önemli.</li>
+<li>Yaşam hakkı gibi evrensel bir hak; mevzuatta olmasa da devlet sağlamak zorunda: <b>pozitif yükümlülük</b>.</li>
+</ul>
+<h4>Şartlar (8)</h4>
+<ul class="short-list">
+<li>1 güncelliğini yitirmiş olmalı (güncellik sübjektif; örn. trafikte ölen kişinin haberi) · 2 kamu yararı olmamalı (milletvekilinin yolsuzluk haberi istenemez) · 3 tarihsel veri olmamalı · 4 bilimsel bilgi olmamalı.</li>
+<li>5 yayında kalma süresi (<mark>1 yıl</mark> kalan için istenemez, <mark>5 yıl</mark> kalan için istenebilir) · 6 ünlü ya da siyasetçi mi (daha çok katlanmalı; Altın Kelebek örneği: <b>20 yıl</b> sonra da istenemez).</li>
+<li>7 olgusal gerçek mi, değer yargısı mı (olgusal habere ait kaldırma daha zor; "yapılan alçaklıktır" gibi değer yargısı daha kolay) · 8 halkın ilgisi canlıysa daha zor.</li>
+</ul>
+<h4>Süre ve başvuru</h4>
+<ul class="short-list">
+<li>Makul süre kategorik değil, somut olaya göre: kişisel veri içeren haberde <b>5 yıl</b> yetebilir, içermeyende <b>15 yıl</b> bile yetmeyebilir.</li>
+<li>Önce arama motoru (Google, Yandex) veya veri sorumlusu → ret ya da cevapsızlıkta <b>KVKK</b> veya 5651 kapsamında <b>Sulh Ceza Hakimliği</b>.</li>
+<li>Mutlak değil (ifade özgürlüğü, basın hürriyeti, haber alma hakkıyla dengelenir); tüzel kişiler (şirketler) KVKK kapsamında yararlanamaz, ticari itibar koruma yollarını kullanır.</li>
 </ul>`,
     html: `
 <p class="lead"><b>Unutulma hakkı:</b> Kişinin, internet arama sonuçlarında kendisiyle ilgili çıkan haber, fotoğraf, video, bilgi vb. verilerin artık <mark>arama sonuçlarında olmasını istememe</mark> hakkıdır.</p>
@@ -563,12 +731,28 @@ Radyo-TV yayınlarını ve <mark>Radyo ve Televizyon Üst Kurulu'nun</mark> kuru
   },
   {
     id: `cevap`, no: 10, title: `Medyada Düzeltme ve Cevap Hakkı`, slides: `Slayt 133–142`,
-    short: `<ul class="short-list">
-<li>Doğuş: şeref-haysiyete dokunma veya gerçeğe aykırı yayın. Cevap ilgili yazıdan uzun olamaz.</li>
-<li><b>Basın:</b> <mark>2 ay</mark> içinde sorumlu müdüre → günlük yayında <mark>3 gün</mark> içinde yayım → yayımlanmazsa <mark>15 gün</mark> içinde sulh ceza.</li>
-<li><b>RTV:</b> <mark>60 gün</mark> içinde medya hizmet sağlayıcıya → <mark>7 gün</mark> içinde, aynı saatte ve programda.</li>
-<li><b>İnternet:</b> içerik (yoksa yer) sağlayıcı → <mark>2 gün</mark> (yoksa reddedilmiş) → <mark>15 gün</mark> Sulh Ceza; cevap <mark>1 hafta</mark> yayında.</li>
-<li>Dikkat: basında süre <b>ay</b>, RTV'de <b>gün</b>.</li>
+    files: [`materyal/Iletisim_Hukuku_Vize_Calisma_Notlari.pptx`],
+    short: `<h4>Ortak kurallar</h4>
+<ul class="short-list">
+<li>Hak, yayının <b>şeref ve haysiyete dokunması</b> ya da <b>gerçeğe aykırı</b> olması hâlinde doğar (gerçek veya tüzel kişiler).</li>
+<li>Süreli yayında suiistimali önleyen 4 şart: suç unsuru yok · üçüncü kişilerin hukuken korunan menfaatine aykırı değil · yayınla ilgili ve bu açıkça belirtilmiş · <mark>ilgili yazıdan uzun değil</mark>.</li>
+</ul>
+<h4>Süreli yayın (Basın Kanunu)</h4>
+<ul class="short-list">
+<li>Yayın tarihinden itibaren en geç <mark>2 ay</mark> içinde sorumlu müdüre (yoksa hak kaybı) → günlük yayında yazı alındıktan itibaren <mark>3 gün</mark> içinde, aynı sayfa ve sütunda, aynı puntoyla yayım.</li>
+<li>Süresinde yayımlanmazsa sürenin bitiminden, aykırı yayımlanırsa yayım tarihinden itibaren <mark>15 gün</mark> içinde bulunduğu yer sulh ceza hâkimi.</li>
+</ul>
+<h4>Radyo-TV (RTV Kanunu md. 8 ve 18)</h4>
+<ul class="short-list">
+<li>md. 8: yayın organları cevap ve düzeltme hakkına saygılı olmalı · md. 18: hakkın sınırları.</li>
+<li>Yayın tarihinden itibaren <mark>60 gün</mark> içinde medya hizmet sağlayıcıya → hiçbir düzeltme ve ekleme yapmadan en geç <mark>7 gün</mark> içinde, aynı saatte ve programda, anlaşılır biçimde.</li>
+<li>Dikkat: Basın Kanunu'nda süre <b>ay</b> (2 ay), RTV'de <b>gün</b> (60 gün) olarak belirlenmiştir.</li>
+</ul>
+<h4>İnternet (5651)</h4>
+<ul class="short-list">
+<li>Önce içerik sağlayıcı (kaldırma + cevap), ulaşılamazsa yer sağlayıcı → talep <mark>2 gün</mark> içinde karşılanmazsa reddedilmiş sayılır.</li>
+<li>Cevap <mark>1 hafta</mark> yayında kalır; ret hâlinde <mark>15 gün</mark> içinde yerleşim yeri Sulh Ceza Hakimliği.</li>
+<li>Notlardaki örnek: Oyuncular Sendikası'nın Mimesis Dergi'de yayımlanan tekzibi (düzeltme metni).</li>
 </ul>`,
     html: `
 <div class="cols">
@@ -628,12 +812,23 @@ Radyo-TV yayınlarını ve <mark>Radyo ve Televizyon Üst Kurulu'nun</mark> kuru
   },
   {
     id: `hakaret`, no: 11, title: `İnternette Kişilik Haklarına Saldırı ve Sosyal Medyada Hakaret`, slides: `Slayt 143–153`,
-    short: `<ul class="short-list">
-<li>TCK <b>125</b> (sosyal medya <b>125/2</b>): <mark>3 ay – 2 yıl hapis veya adli para cezası</mark>.</li>
-<li>Şikâyete bağlı; şikâyet süresi <b>6 ay</b>; uzlaştırmaya tabi.</li>
-<li>Delil: tarih ve kimliği gösteren ekran görüntüsü; şikâyet <b>Cumhuriyet Başsavcılığı</b>'na.</li>
-<li>IP sahibi: ISS veya BTK'dan, savcı ya da mahkeme kararıyla. ABD sunucuları hakaret için kimlik paylaşmıyor.</li>
-<li>Ceza davasından bağımsız tazminat davası açılabilir; ceza dosyası delil olur.</li>
+    files: [`materyal/Iletisim_Hukuku_Vize_Calisma_Notlari.pptx`],
+    short: `<h4>İnternette kişilik haklarına saldırı</h4>
+<ul class="short-list">
+<li>Eskiden internet yoğun kullanılmadığı için korunma ihtiyacı yoktu. İfade özgürlüğü önemli, ama paylaşım kişilik hakkına saldırı olmamalı.</li>
+<li>Kimlik gizlenebildiği için şeref ve haysiyeti zedelemek kolay; IP numarası kullanılan bilgisayarı gösterir, internet kafede tespit zorlaşır; e-postayla da ihlal kolay.</li>
+</ul>
+<h4>Hakaret suçu</h4>
+<blockquote>"Bir kimseye onur, şeref ve saygınlığını rencide edebilecek nitelikte somut bir fiil veya olgu isnat eden veya sövmek suretiyle bir kimsenin onur, şeref ve saygınlığına saldıran kişi, üç aydan iki yıla kadar hapis veya adlî para cezası ile cezalandırılır." (TCK 125)</blockquote>
+<ul class="short-list">
+<li>5237 sayılı TCK, 8. bölüm <b>"Şerefe Karşı Suçlar"</b>; sosyal medyada en sık sorunlardan. Sosyal medyada hakaret <b>125/2</b>, temel şeklin cezası: <mark>3 ay – 2 yıl hapis veya adli para cezası</mark>.</li>
+</ul>
+<h4>Şikâyet ve ispat</h4>
+<ul class="short-list">
+<li><b>Şikâyete bağlı</b>; en geç <mark>6 ay</mark> içinde (notlarda: "zaman aşımı 6 aydır"). İlk iş: yer, tarih ve failin kimliğini gösteren <b>ekran görüntüsü</b> (en hızlı ve pratik delil).</li>
+<li>Dilekçe ve ekran görüntüsüyle <b>Cumhuriyet Başsavcılığı</b>'na. IP → cihaz → cihazın sahibi; IP'nin sahibi ISS ya da <b>BTK</b>'dan, savcı veya mahkeme kararıyla öğrenilir. IP sahibi hesabı yakınına kullandırmış, hesap çalınmış ya da sahte olabilir → ifadelerle netleşir.</li>
+<li>Gizli hesaplar: Instagram, Facebook, Twitter sunucuları ABD'de; bilgiler uluslararası yazışmayla alınır; ABD hakareti <b>"hafif suç"</b> saydığından kimlik vermiyor.</li>
+<li><b>Uzlaştırmaya tabi:</b> teklif yapılmadan soruşturma yapılamaz (yargılama koşulu). Ceza davasından bağımsız tazminat davası açılabilir; sonuçlanan ceza dosyası delil olur.</li>
 </ul>`,
     html: `
 <h3>İnternette kişilik haklarına saldırı</h3>
@@ -678,11 +873,28 @@ Radyo-TV yayınlarını ve <mark>Radyo ve Televizyon Üst Kurulu'nun</mark> kuru
   },
   {
     id: `ezber`, no: 12, title: `Ezber Tablosu: Süreler, Sayılar, Maddeler`, slides: `Tüm üniteler`,
-    short: `<ul class="short-list">
-<li><b>Süreler:</b> 24 saat (yer sağlayıcı) · 2 ay / 3 gün / 15 gün (basın) · 60 gün / 7 gün (RTV) · 2 gün / 1 hafta / 15 gün (internet) · 6 ay (hakaret şikâyeti).</li>
-<li><b>Ceza ve yaş:</b> 3 ay – 2 yıl (hakaret) · 18 yaş (erginlik) · 1 yıl+ mahkûmiyet (kısıtlama).</li>
-<li><b>Maddeler:</b> Anayasa 13 / 25 / 26 / 28 · İHEB 18–19 · AİHS 9 · Basın K. 2 · RTV K. 8 / 18 · TCK 125 · 5651.</li>
-<li><b>Tarihler:</b> 1215 · 1679 · 1776 · 1789 · 1927 · 1940'lar · 1948 · 1968 · 1990.</li>
+    files: [`materyal/Iletisim_Hukuku_Vize_Calisma_Notlari.pptx`],
+    short: `<h4>Süreler</h4>
+<ul class="short-list">
+<li><b>24 saat:</b> yer sağlayıcı suç içeriğini kaldırır.</li>
+<li><b>Basın:</b> 2 ay (sorumlu müdüre gönder) · 3 gün (günlük yayında yayımla) · 15 gün (sulh ceza hâkimi).</li>
+<li><b>RTV:</b> 60 gün (medya hizmet sağlayıcıya gönder) · 7 gün (aynı saat ve programda yayımla).</li>
+<li><b>İnternet:</b> 2 gün (karşılanmazsa ret) · 1 hafta (yayında) · 15 gün (Sulh Ceza Hakimliği).</li>
+<li><b>Hakaret:</b> 6 ay şikâyet; ceza 3 ay – 2 yıl hapis veya adli para.</li>
+</ul>
+<h4>Yaş ve unutulma hakkı</h4>
+<ul class="short-list">
+<li>18 yaş erginlik · 1 yıl ve üzeri özgürlüğü bağlayıcı ceza kısıtlama sebebi.</li>
+<li>Unutulma: 1 yıl yayında kalan için istenemez, 5 yıl için istenebilir · kişisel veri içeren haberde 5 yıl yetebilir, içermeyende 15 yıl bile yetmeyebilir · Altın Kelebek: 20 yıl sonra da istenemez.</li>
+</ul>
+<h4>Maddeler</h4>
+<ul class="short-list">
+<li>Anayasa 13 (genel sınırlama) · 25 (düşünce ve kanaat) · 26 (açıklama ve yayma) · 28 (basın) · İHEB 18 / 19 · AİHS 9.</li>
+<li>Basın K. 2 (kavramlar) · RTV K. 8 (ilkeler) / 18 (düzeltme ve cevap) · TMK 23–25 · TBK 49 · TCK 125, 125/2 · 5237 TCK · 5651 İnternet.</li>
+</ul>
+<h4>Tarihler</h4>
+<ul class="short-list">
+<li>1215 Magna Carta · 1679 Haklar Bildirisi · 1776 Amerikan Bağımsızlık · 1789 Fransız Devrimi · 1927 radyo · 1940'lar Lasswell · 10 Aralık 1948 İHEB · 1968 TV · 1990 TRT tekelinin sonu.</li>
 </ul>`,
     html: `
 <p class="lead">Sınavda en çok karıştırılan sayısal bilgiler tek yerde.</p>

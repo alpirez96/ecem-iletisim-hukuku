@@ -1,4 +1,5 @@
-// Her ders için dersler/<ders>/ozet.pdf dosyasını data.js içeriğinden üretir.
+// Her ders için dersler/<ders>/ klasörüne data.js içeriğinden üç PDF üretir:
+//   ozet.pdf (detaylı), ozet-kisa.pdf (kısa özet), tek-sayfa.pdf (onePager, tek A4 sayfa)
 //
 //   npm install --no-save playwright && npx playwright install chromium
 //   node scripts/pdf-olustur.js              (tüm dersler)
@@ -57,14 +58,18 @@ function loadCourses() {
   return ctx.window.DERSLER || [];
 }
 
-// Kısa özet: her konunun "short" listesi, konular art arda akar
+// Kısa özet: her konunun "short" içeriği (alt başlık + madde + alıntı), konular art arda akar
 const shortCss = `
-  .unit-s { break-inside: avoid; margin: 0 0 12pt; }
+  .unit-s { margin: 0 0 14pt; }
   .unit-s .eyebrow { margin: 0 0 2pt; }
-  .unit-s h2 { font: 700 13pt/1.25 var(--serif); margin: 0 0 6pt; }
+  .unit-s h2 { font: 700 13.5pt/1.25 var(--serif); margin: 0 0 6pt; break-after: avoid; }
   .group-s { font: 700 10pt/1.2 var(--sans); letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin: 16pt 0 8pt; padding-bottom: 3pt; border-bottom: 1px solid var(--line); }
-  .short-list { margin: 0; padding-left: 14pt; }
-  .short-list li { margin: 0 0 3pt; font-size: 10.2pt; line-height: 1.45; }
+  .head-s { break-inside: avoid; break-after: avoid; }
+  .prose.short-p { font-size: 9.8pt; line-height: 1.45; }
+  .prose.short-p h4 { margin: 8pt 0 3pt; font-size: 8.6pt; break-after: avoid; }
+  .prose.short-p .short-list { margin: 0 0 2pt; padding-left: 13pt; }
+  .prose.short-p .short-list li { margin: 0 0 2.5pt; break-inside: avoid; }
+  .prose.short-p blockquote { margin: 3pt 0 5pt; padding: 6pt 9pt; font-size: 9.6pt; }
   .cover.small h1 { font-size: 22pt; }
   .cover.small .sub { margin-bottom: 10pt; }
 `;
@@ -79,19 +84,77 @@ function shortHtml(c) {
   <header class="cover small">
     <p class="eyebrow">Ecem'in Dersleri · Kısa özet</p>
     <h1>${c.title}</h1>
-    <p class="sub">${[c.exam && `${c.exam} için hızlı tekrar`, 'Ayrıntılar için detaylı özet PDF\'i'].filter(Boolean).join(' · ')}</p>
+    <p class="sub">${[c.exam && `${c.exam} için tekrar özeti`, 'Konuları çalıştıktan sonra bununla gözden geçir'].filter(Boolean).join(' · ')}</p>
   </header>
   ${units.map((u, i) => {
     const g = groups[u.group];
     const head = g && (i === 0 || units[i - 1].group !== u.group) ? `<p class="group-s">${g.title}</p>` : '';
     return `
-  <section class="unit-s">${head}
+  <section class="unit-s">
+    <div class="head-s">${head}
     <p class="eyebrow">${word} ${u.no}${u.fromPdf ? ` · <span class="badge">PDF'ten</span>` : ''}</p>
-    <h2>${u.title}</h2>
-    ${u.short}
+    <h2>${u.title}</h2></div>
+    <div class="prose short-p">${u.short}</div>
   </section>`;
   }).join('')}
 </body></html>`;
+}
+
+// Tek sayfa: onePager bölümleri üç sütunda; yazı boyutu sayfaya sığacak şekilde ayarlanır (--op)
+const onePageCss = `
+  @page { size: A4; margin: 10mm; }
+  body { font-size: var(--op); line-height: 1.38; }
+  .op-top { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin: 0 0 .7em; padding-bottom: .4em; border-bottom: 2px solid var(--brand); }
+  .op-top h1 { font: 700 calc(var(--op) * 1.9)/1.1 var(--serif); margin: 0; }
+  .op-top span { color: var(--muted); font-size: .9em; }
+  .cols3 { columns: 3; column-gap: 1.2em; }
+  .op { break-inside: avoid; margin: 0 0 .75em; padding: 0; border: 0; border-radius: 0; background: none; font-size: inherit; line-height: inherit; }
+  .op-group { margin: 0 0 .3em; font-size: .78em; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+  .op h2 { display: flex; gap: .4em; margin: 0 0 .25em; font: 700 1.02em/1.25 var(--sans); color: var(--brand); }
+  .op h2 b { flex: none; min-width: 1.6em; padding: 0 .25em; border-radius: .3em; background: var(--brand-soft); text-align: center; font-size: .9em; line-height: 1.45; }
+  .op ul { display: block; margin: 0; padding-left: 1.05em; }
+  .op li { margin: 0 0 .18em; }
+  .op li::marker { color: var(--brand); }
+  mark { background: linear-gradient(180deg, transparent 50%, var(--hl) 50%); color: inherit; padding: 0 .1em; }
+`;
+
+function onePageHtml(c, size) {
+  const units = Object.fromEntries(c.units.map(u => [u.id, u]));
+  const groups = Object.fromEntries((c.groups || []).map(g => [g.id, g]));
+  const secs = (c.onePager || []).filter(x => units[x.u]);
+  return `<!doctype html><html lang="tr"><head><meta charset="utf-8">
+<style>${css}</style><style>${printCss}</style><style>${onePageCss}</style></head>
+<body style="--hue:${c.hue ?? 285}; --op:${size}px">
+  <header class="op-top"><h1>${c.title}</h1><span>Ecem'in Dersleri · Tek sayfa${c.exam ? ` · ${c.exam}` : ''}</span></header>
+  <div class="cols3">${secs.map((x, i) => {
+    const u = units[x.u], g = groups[u.group];
+    const head = g && (i === 0 || units[secs[i - 1].u].group !== u.group) ? `<p class="op-group">${g.title}</p>` : '';
+    return `<section class="op">${head}<h2><b>${u.no}</b><span>${u.title}</span></h2><ul>${x.items.map(t => `<li>${t}</li>`).join('')}</ul></section>`;
+  }).join('')}</div>
+</body></html>`;
+}
+
+// A4 içerik alanı (10 mm kenar boşluğu, 96 dpi): 718 × 1047 px
+async function fitOnePage(page, c) {
+  await page.setViewportSize({ width: 718, height: 1047 });
+  const height = async size => {
+    await page.setContent(onePageHtml(c, size), { waitUntil: 'load' });
+    return page.evaluate(() => document.body.scrollHeight);
+  };
+  // En fazla 14 px (≈ 10,5 pt): sayfa boş kalsa da yazı afiş boyutuna büyümesin
+  let lo = 6, hi = 14;
+  if (await height(hi) <= 1040) lo = hi;
+  for (let k = 0; k < 12 && lo < hi; k++) {
+    const mid = (lo + hi) / 2;
+    if (await height(mid) <= 1040) lo = mid; else hi = mid;
+  }
+  for (let size = lo; size > 6; size -= 0.2) {
+    await page.setContent(onePageHtml(c, size), { waitUntil: 'load' });
+    const pdf = await page.pdf({ format: 'A4', printBackground: true, preferCSSPageSize: true });
+    const pages = (pdf.toString('latin1').match(/\/Type\s*\/Page[^s]/g) || []).length;
+    if (pages === 1) return { pdf, size };
+  }
+  throw new Error(`${c.id}: tek sayfa özet bir sayfaya sığmadı; onePager maddelerini kısalt`);
 }
 
 function pageHtml(c) {
@@ -160,6 +223,13 @@ function pageHtml(c) {
           <span>Ecem'in Dersleri · ${label}</span><span><span class="pageNumber"></span> / <span class="totalPages"></span></span></div>`
       });
       console.log(`✓ ${path.relative(root, out)}`);
+    }
+    if (c.onePager && c.onePager.length) {
+      const { pdf, size } = await fitOnePage(page, c);
+      const out = path.join(root, 'dersler', c.id, 'tek-sayfa.pdf');
+      fs.writeFileSync(out, pdf);
+      console.log(`✓ ${path.relative(root, out)} (yazı ${size.toFixed(1)} px)`);
+      await page.setViewportSize({ width: 1280, height: 720 });
     }
   }
   await browser.close();

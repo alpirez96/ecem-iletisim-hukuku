@@ -18,7 +18,7 @@ groups: [
   { id: `h4`, title: `4. Hafta` },
   { id: `h5`, title: `5. Hafta` },
   { id: `h6`, title: `6. Hafta` },
-  { id: `tekrar`, title: `Genel Tekrar` }
+  { id: `genel`, title: `Genel Tekrar` }
 ],
 
 materials: [
@@ -37,16 +37,81 @@ materials: [
   { group: `h6`, title: `Auguste Comte`, kind: `Sunum`, size: `76 KB`, file: `materyal/6-hafta/Auguste_Comte.pptx` }
 ],
 
+onePager: [
+  { u: `dogus`, items: [
+      `Bilim: sistematik, ampirik, yöntemsel açık, nesnel, genelleyici. 19. yy: <b>bilim = doğa bilimleri</b>.`,
+      `Katalizör Fransız Devrimi: değişim meşru. Nomotetik (yasa) / idiografik (tarih).`,
+      `Devlet → siyaset · piyasa → ekonomi · <mark>sivil toplum → sosyoloji</mark> · "Öteki" → antropoloji.`
+  ] },
+  { u: `wallerstein`, items: [
+      `<b>Scientia</b>; Kartezyen dualizm; Hooke 1663 → Snow "iki kültür".`,
+      `Mücadele: insan dünyasının bilgisini kim denetleyecek? Model: <b>Newton fiziği</b>; Comte & Mill.`,
+      `5 disiplin, 5 ülke; Ranke "gerçekten ne oldu?"; dışarıda kalan: coğrafya, psikoloji, hukuk.`,
+      `1850–1914 üniversite · ceteris paribus · <mark>1945</mark> kurumsallaşma tamam.`
+  ] },
+  { u: `aydinlanma`, items: [
+      `Kant: <b>"Sapere Aude!"</b> Rönesans → Reform → Descartes → Newton.`,
+      `Rasyonalizm, deneycilik, sekülerleşme, ilerleme. Locke tabula rasa · Smith görünmez el · Montesquieu güçler ayrılığı · Rousseau genel irade.`
+  ] },
+  { u: `fransiz`, items: [
+      `3. zümre <b>%98</b>; zümre başına oy (2'ye 1) → kişi başına oy. Sieyès: "Her şey / Hiçbir şey / Bir şey".`,
+      `<mark>5 Mayıs → 17 Haziran → 20 Haziran → 9 Temmuz → 14 Temmuz 1789</mark> → 1791 → 21 Eylül 1792 Cumhuriyet.`
+  ] },
+  { u: `sanayi`, items: [
+      `Spinning Jenny <b>16 kat</b> · Watt buharı · fabrika, saat disiplini, uzmanlaşma.`,
+      `1900'de <b>%62</b> kentli · günde 12–16 saat · kolera → sendika ve yasal reform.`
+  ] },
+  { u: `modernite`, items: [
+      `Giddens: seküler-akılcı · siyasal · ekonomik kurumlar.`,
+      `3 devrim: Aydınlanma (entelektüel), Fransız (siyasal), Sanayi (ekonomik).`,
+      `Comte "toplumsal fizik" · Durkheim olgular <b>"şey"</b>.`
+  ] },
+  { u: `imgelem`, items: [
+      `Mills, 1958: <mark>biyografi · toplum · tarih</mark>; 3 soru (yapı, dönem, insan tipi).`,
+      `Kişisel sorun / kamusal sorun: biyografi tarihi yansıtır.`,
+      `İlgisizlik + huzursuzluk; teknolojik ethos; imgelem özgürleştirici.`
+  ] },
+  { u: `dusunmek`, items: [
+      `Alan ve yöntem ayrımı sorunlu; fark <b>bilişsel perspektif</b> (sorular).`,
+      `Sosyoloji ilişkisel: <mark>karşılıklı bağımlılık</mark>. Sağduyu sistemsiz, niyetlere bakar.`
+  ] },
+  { u: `bauman`, items: [
+      `Beşeri dünyada doğal ayrım yok. İktisat maliyet–yarar · siyaset iktidar ve nüfuz.`,
+      `Sağduyudan 3 fark: <b>sorumlu yöntem · sahanın boyutları · anlama/açıklama biçimi</b>.`,
+      `Sağduyunun ikili gücü; tanıdık olan sorgulanmaz.`
+  ] },
+  { u: `comte`, items: [
+      `1798 · Saint-Simon · Pozitif Felsefe Dersleri 1830–1842. Otorite + ilerleme.`,
+      `Üç hâl: <mark>teolojik → metafizik → pozitif</mark>.`,
+      `Matematik → astronomi → fizik → kimya → biyoloji → <b>sosyoloji (kraliçe)</b>. "Bilmek öngörmek, öngörmek yapmaktır."`,
+      `Touraine: Ben'den Biz'e · Marcuse: muhafazakâr.`
+  ] }
+],
+
 units: [
   {
     id: `dogus`, group: `h2`, no: `2.1`, title: `Sosyal Bilimlerin Doğuşu`,
-    short: `<ul class="short-list">
-<li>19. yüzyılda bilim = doğa bilimleri. Sosyal bilimler "nesnel" bilgi çabasının parçası olarak doğdu (Wallerstein).</li>
-<li>Beş disiplin: siyaset bilimi (devlet), ekonomi (piyasa), <mark>sosyoloji (sivil toplum)</mark>, tarih, antropoloji (Avrupa dışı).</li>
-<li>Katalizör: <b>Fransız Devrimi</b>; değişim meşru oldu, soru: nasıl örgütlenecek?</li>
-<li><b>Nomotetik</b> (genel yasa: siyaset, ekonomi, sosyoloji) ↔ <b>idiografik</b> (tekil olay: tarih).</li>
-<li>Comte: "sosyoloji" adı, toplumsal fizik. Durkheim (1895): toplumsal olgular birer "şey".</li>
-<li>Bilimsellik kriterleri: sistematiklik, ampirik dayanak, yöntemsel açıklık, nesnellik, genelleme.</li>
+    short: `<h4>Bilgiyi bilim yapan nedir?</h4>
+<ul class="short-list">
+<li>19. yüzyılda bilgi, doğa bilimleri hegemonyasından modern toplumu inceleyen <b>kurumsallaşmış akademik disiplinlere</b> dönüştü (ana tema: bilginin kurumsallaşması).</li>
+<li>Bilimin 5 özelliği: <mark>sistematiklik · ampirik dayanak · yöntemsel açıklık · nesnellik · genelleme</mark>.</li>
+<li>19. yüzyıl epistemolojisi: <b>bilim = doğa bilimleri</b> (fizik, kimya, biyoloji), tek meşru bilgi modeli. Varsayım: dışarıda nesnel bir gerçeklik var, deneysel ve objektif yöntemlerle ulaşılır.</li>
+</ul>
+<blockquote>"Sosyal bilimlerin değişik disiplinleri, 19. yüzyılda 'gerçeklik' hakkında ampirik bulgulara dayalı 'nesnel' bilgi elde edilmesini sağlamak için harcanan genel çabaların bir parçası olarak yaratıldı." — Wallerstein</blockquote>
+<h4>Fransız Devrimi ve ayrışma</h4>
+<ul class="short-list">
+<li>Disiplinler: siyaset bilimi, ekonomi, sosyoloji, tarih, antropoloji. Katalizör: <b>Fransız Devrimi</b>, değişimi istisna değil meşru gerçeklik yaptı; "halk" norm olunca değişim geçici düzensizlik sayılamadı.</li>
+<li>Temel soru: <i>"Toplumsal değişim kaçınılmazsa, onu nasıl anlayacak, örgütleyecek ve rasyonelleştireceğiz?"</i></li>
+<li><b>Nomotetik</b> (siyaset bilimi, ekonomi, sosyoloji): genel yasalar, soyut modeller, doğa bilimi ideali. <b>İdiografik</b> (tarih): tekil olayın bağlamı; "Bu olay neden tam da bu biçimde gerçekleşti?"</li>
+<li>İş bölümü: siyaset bilimi → <b>devlet</b> · ekonomi → <b>piyasa</b> · sosyoloji → <b>sivil toplum</b> (devlet ve piyasa dışı: işçi mahalleleri, kent suçları, demografi).</li>
+<li>Antropoloji "Öteki"ni inceler: Avrupa dışı, küçük gruplar halinde yaşayan, yazılı arşivi olmayan halklar; askeri bakımdan zayıf bu topluluklar "kabile" gibi şemsiye kavramlarla adlandırıldı.</li>
+</ul>
+<h4>Kurucular ve sosyolojinin konusu</h4>
+<ul class="short-list">
+<li><b>Comte:</b> "sosyoloji" teriminin mucidi; gözlem ve deney ilkesi; "toplumsal fizik". <b>Durkheim:</b> <i>Sosyolojik Yöntemin Kuralları</i> (<mark>1895</mark>); toplumsal olgular bireyden bağımsız, dışsal birer <b>"şey"</b> gibi incelenmeli; tarafsız açıklama ideali.</li>
+<li>Wallerstein'a göre sosyoloji pratik ihtiyaçlardan doğdu: kent krizleri (yoksulluk, suç, demografi), çatışmayı açıklamak (sanayileşme, işçi sınıfı), düzeni anlamak, istikrar sağlamak (sosyal reform, kamu politikası).</li>
+<li>Konuları: sınıflar ve eşitsizlik, iş ve emek, aile ve toplumsal cinsiyet, kentleşme ve göç, suç, eğitim ve din, nüfus, toplumsal hareketler; "toplum"u soyut değil, belirli ilişkileri <b>ampirik</b> olarak araştırır.</li>
+<li>Tartışma: insan toplumunu incelerken tam tarafsızlık ve nesnellik mümkün mü?</li>
 </ul>`,
     files: [`materyal/2-hafta/Sosyal_Bilimlerin_Dogusu.pptx`],
     html: `
@@ -135,14 +200,38 @@ units: [
   },
   {
     id: `wallerstein`, group: `h2`, no: `2.2`, title: `Wallerstein: Sosyal Bilimlerin Tarihsel Kuruluşu`,
-    short: `<ul class="short-list">
-<li>Sosyal bilim, modern dünyanın sistemli, ampirik, dünyevi bilgi çabasıdır (<i>scientia</i>).</li>
-<li>Bilim ile felsefe ayrıştı; "bilim" = doğa bilimi oldu. Asıl mesele: <mark>insan dünyasına dair bilgiyi kim denetleyecek?</mark></li>
-<li>Fransız Devrimi → değişimi örgütleme ihtiyacı → "pozitif" bilim; model <b>Newton fiziği</b>.</li>
-<li>Nomotetik (yasa koyan) ↔ idiografik (tekil olayı betimleyen). Disiplinler üniversitelere <b>1850–1914</b>'te yansıdı.</li>
-<li>Beş disiplin: tarih, iktisat, sosyoloji, siyaset bilimi, antropoloji. Beş yer: Britanya, Fransa, Almanyalar, İtalyalar, ABD.</li>
-<li>Sosyoloji: Comte'a göre "bilimlerin kraliçesi"; pratikte sosyal reform derneklerinden doğdu. Asli parça olamayanlar: coğrafya, psikoloji, hukuk.</li>
-<li>1945'te kurumsallaşma tamam: iktisat <i>ceteris paribus</i>, siyaset bilimi hükümet yapıları, sosyoloji sosyal ilişkiler.</li>
+    short: `<h4>Sosyal bilim modern dünyaya aittir <span class="ref">s. 12</span></h4>
+<ul class="short-list">
+<li>16. yüzyıldan beri, gerçeklik hakkında ampirik olarak doğrulanan sistemli, dünyevi bilgi üretme çabası; adı <mark>scientia</mark> ("bilgi").</li>
+<li>Klasik bilimin varsayımları: <b>Kartezyen dualizm</b> (doğa–insan, madde–akıl, fiziksel–sosyal dünya ayrımı) ve geçmiş–gelecek simetrisi öngören <b>Newton modeli</b>.</li>
+<li><b>Thomas Hooke</b>'un <mark>1663</mark> Royal Society tüzüğü, <b>C. P. Snow</b>'un sonradan <b>"iki kültür"</b> diyeceği ayrımı içeriyordu. Bilim: her zaman her yerde doğru, evrensel doğa yasalarını aramak.</li>
+</ul>
+<h4>Bilim–felsefe ayrışması <span class="ref">s. 14–15</span></h4>
+<ul class="short-list">
+<li>Felsefe, a priori ve deneye tabi olmayan önermelerle suçlanan <b>teolojinin yerini alan</b> dal gibi görüldü. "Ayrı ama eşit" anlayışı yerini kesin bilgiyi (bilim) hayal edilen bilgiden üstün gören <b>hiyerarşiye</b> bıraktı.</li>
+<li>19. yüzyıl başında sıfatsız "bilim" = doğa bilimi. Alternatifin adında uzlaşılamadı: sanat, insan bilimi, edebiyat (belles-lettres), felsefe, "kültür", Geisteswissenschaften.</li>
+<li>Asıl mücadele: <mark>insanların dünyasıyla ilgili bilgiyi kimin denetleyeceği</mark>. Modern devletin daha kesin bilgiye ihtiyacı yeni bilgi kategorilerini doğurdu.</li>
+</ul>
+<h4>Disiplinleşme ve "pozitif" bilim <span class="ref">s. 16–20</span></h4>
+<ul class="short-list">
+<li>19. yüzyılın damgası: bilginin <b>disiplinlere ayrılması ve meslekleşmesi</b> (bilgiyi ve bilgi üretenleri yeniden üreten kurumlar). Üniversite, sanatlar ile bilimler arasındaki gerilimin başlıca alanı oldu.</li>
+<li>"Halk" egemenliği norm olunca değişimi örgütleme ihtiyacı doğdu; düzen istikrarlı kurulacaksa bilim kesin (<b>"pozitif"</b>) olmalıydı → İngiltere ve Fransa'da kurucular model olarak <mark>Newton fiziği</mark>ne yöneldi.</li>
+<li>Epistemolojik yelpaze: bir uçta matematik ve doğa bilimleri, öbür uçta felsefe ve insan bilimleri; ortada tarih (<b>idiografik</b>: her olayı tekliği içinde betimler) ve sosyal bilim (<b>nomotetik</b>: yasa koyar).</li>
+<li>Comte'un "boşanma" dediği ayrışma Aristoteles metafiziğinin dışlanmasıydı; determinist yasalar anarşik hareketlerin teknokratça denetimine yararlıydı. Bilimin nesnel gerçekliği keşfettiğini <b>Comte ve Mill</b> savundu. Disiplinler üniversitelere ancak <mark>1850–1914</mark>'te yansıdı.</li>
+</ul>
+<h4>Disiplinler ve mekân <span class="ref">s. 21–32</span></h4>
+<ul class="short-list">
+<li>Amaç doğruyu icat etmek değil, <b>"öğrenmek"</b>. Beş merkez: Büyük Britanya, Fransa, Almanyalar, İtalyalar, ABD. I. Dünya Savaşı civarı beş disiplin: <b>tarih, iktisat, sosyoloji, siyaset bilimi, antropoloji</b> (+ belki Doğu Bilimleri).</li>
+<li><b>Ranke:</b> "gerçekten ne oldu?"; tarihçi kütüphaneye değil <b>arşive</b> (laboratuvar) gitmeli.</li>
+<li>Sosyoloji: Comte'a göre <b>"bilimlerin kraliçesi"</b>, pozitivist; uygulamada kentli işçi sınıflarının yol açtığı düzensizliklerle uğraşan <b>sosyal reform derneklerinin</b> üniversitede kurumsallaşmasıyla gelişti. Siyaset biliminin ayrılması iktisadın ayrılmasını meşrulaştırdı.</li>
+<li>Antropoloji kâşif, seyyah ve sömürge memurlarıyla başladı ("kabile"); Arap-İslam ve Çin gibi "yüksek uygarlıkları" ise Doğu Bilimleri inceledi (ortaçağ rahipleri başlattı).</li>
+<li>Asli parçası olamayan üç alan: <mark>coğrafya, psikoloji, hukuk</mark>. Mekân <b>devlete tabi</b>: toplum, ulusal ekonomi, siyasal sistem, ulus.</li>
+</ul>
+<h4>Kurumsallaşma 1850–1945 <span class="ref">s. 34–36</span></h4>
+<ul class="short-list">
+<li>Kürsüler, bölümler, dergiler, dernekler, kütüphane katalogları. Nomotetikler tarihten ayrıldı: genel yasalar, olguları dizinin örneği saymak, gerçekliği parçalara ayırmak, hipotez + tercihen <b>nicel</b> veri, kontrollü gözlem.</li>
+<li>İktisat <mark>ceteris paribus</mark> (diğer koşullar aynıyken) · siyaset bilimi resmi hükümet yapıları · sosyoloji ihmal edilen sosyal ilişkiler.</li>
+<li><mark>1945</mark>'te kurumsallaşma tamamlandı; sosyal bilimler doğa bilimlerinden ve "uygar" toplumların kültürel üretimini inceleyen insan bilimlerinden kesin ayrıştı.</li>
 </ul>`,
     fromPdf: {
       name: `Immanuel Wallerstein (ve ark.), <i>Sosyal Bilimleri Açın</i>, Bölüm I: "Onsekizinci Yüzyıldan 1945'e Kadar Sosyal Bilimlerin Tarihsel Kuruluşu" (s. 11–36)`,
@@ -272,12 +361,26 @@ units: [
   },
   {
     id: `aydinlanma`, group: `h3`, no: `3.1`, title: `Aydınlanma Felsefesi ve Çağı`,
-    short: `<ul class="short-list">
-<li>Kant: <mark>"Sapere Aude!"</mark>; insanın kendi suçuyla düştüğü ergin olmama durumundan kurtulması.</li>
-<li>Hazırlayanlar: Rönesans → Reform → Akılcılık (Descartes) → Bilimsel Devrim (Newton).</li>
-<li>İlkeler: rasyonalizm, deneycilik, sekülerleşme, ilerleme inancı.</li>
-<li>Diderot & d'Alembert: Ansiklopedi · Voltaire: hoşgörü · Locke: tabula rasa · Hume: kuşkuculuk · Smith: görünmez el · Montesquieu: güçler ayrılığı · Rousseau: toplum sözleşmesi.</li>
-<li>Miras: 1776 ve 1789 devrimleri, insan hakları, anayasacılık.</li>
+    short: `<h4>Aydınlanma nedir?</h4>
+<ul class="short-list">
+<li>18. yüzyıl düşünce devrimi: aklın egemenliği, bireysel özgürlükler, modern dünyanın entelektüel temeli.</li>
+</ul>
+<blockquote>"Sapere Aude!" — Kant: Aydınlanma, insanın kendi suçu ile düşmüş olduğu ergin olmama durumundan kurtulmasıdır.</blockquote>
+<ul class="short-list">
+<li>Aklın özerkliği: geleneksel dogmalar yerine bağımsız akıl yürütme.</li>
+<li>Hazırlayan dönemeçler: <b>Rönesans</b> (15.–16. yy, hümanizm) → <b>Reform</b> (16. yy, dinsel otoritenin sorgulanması) → <b>Akılcılık</b> (17. yy, Descartes: metodolojik şüphe) → <b>Bilimsel Devrim</b> (17.–18. yy, Newton, evrensel yasalar).</li>
+<li>4 ilke: <mark>rasyonalizm · deneycilik · sekülerleşme · ilerleme inancı</mark>.</li>
+</ul>
+<h4>Düşünürler</h4>
+<ul class="short-list">
+<li><b>Diderot & d'Alembert:</b> Ansiklopedi (bilgiyi tek çatıda toplayıp yaymak) · <b>Voltaire:</b> hoşgörü, taassuba karşı ifade özgürlüğü.</li>
+<li><b>Locke:</b> doğal haklar, zihin <i>tabula rasa</i>; yaşam, özgürlük, mülkiyet · <b>Hume:</b> eleştirel kuşkuculuk, bilgi duyusal deneyimden, neden-sonucu sorgular · <b>Adam Smith:</b> politik iktisat, <b>"görünmez el"</b>.</li>
+<li><b>Montesquieu:</b> güçler ayrılığı (<i>Kanunların Ruhu</i>) · <b>Rousseau:</b> <i>Toplum Sözleşmesi</i>, halk egemenliği ve genel irade.</li>
+</ul>
+<h4>Kamusal alan ve miras</h4>
+<ul class="short-list">
+<li>Kahvehaneler, salonlar, akademiler tartışma merkezi oldu; gazete, broşür ve kitapla fikirler kitlelere ulaştı.</li>
+<li>Miras: Amerikan (1776) ve Fransız (1789) Devrimleri · insan hakları ve yurttaşlık · hukukun üstünlüğü ve laik devlet.</li>
 </ul>`,
     files: [`materyal/3-hafta/Aydinlanma_Felsefesi_ve_Cagi.pptx`],
     html: `
@@ -342,12 +445,23 @@ units: [
   },
   {
     id: `fransiz`, group: `h3`, no: `3.2`, title: `Fransız Devrimi: Zümrelerden Ulusal Egemenliğe`,
-    short: `<ul class="short-list">
-<li>Ancien Régime: ruhban, soylular, üçüncü zümre (nüfusun <b>%98</b>'i).</li>
-<li><b>5 Mayıs 1789</b> États-Généraux. "Zümre başına oy" (2'ye 1) ↔ "kişi başına oy".</li>
-<li>Sieyès: <mark>"Üçüncü Zümre nedir? Her şey."</mark> Zümre değil, ulus temsil edilir.</li>
-<li>17 Haziran Ulusal Meclis · 20 Haziran Tenis Kortu Yemini · 14 Temmuz Bastille · 1791 anayasal monarşi · <b>21 Eylül 1792 Cumhuriyet</b>.</li>
-<li>Özü: meşruiyet zümreden <b>ulusal egemenliğe</b>; eşit yurttaşlık.</li>
+    short: `<h4>Temsil krizi</h4>
+<ul class="short-list">
+<li>Dönem <b>1789–1792</b>: zümrelere dayalı meşruiyetten (Ancien Régime) ulus, eşit yurttaşlık ve halk egemenliğine.</li>
+<li>Zümreler: <b>1.</b> ruhban (Kilise; mali ve hukuki ayrıcalık) · <b>2.</b> soylular (feodal haklar, makamlara erişim) · <b>3.</b> halk ve burjuvazi (köylü, zanaatkâr, tüccar), <mark>nüfusun %98'i</mark>.</li>
+<li>Mali kriz: XVI. Louis États-Généraux'yu <mark>1614'ten sonra ilk kez</mark>, 5 Mayıs 1789'da Versailles'da topladı. Soru: Fransa'yı kim temsil ediyor?</li>
+<li><b>Zümre başına bir oy:</b> ruhban + soylular halkı 2'ye 1 yener. 3. zümrenin talebi: <b>kişi başına bir oy</b>.</li>
+</ul>
+<blockquote>"Üçüncü Zümre Nedir? Her şey. Şimdiye kadar siyasal düzende ne oldu? Hiçbir şey. Ne olmak istiyor? Bir şey." — Abbé Sieyès (1789)</blockquote>
+<ul class="short-list">
+<li>Eski mantık <b>Zümre → Temsil</b>, yeni mantık <b>Ulus → Temsil</b>.</li>
+</ul>
+<h4>Kronoloji</h4>
+<ul class="short-list">
+<li><mark>5 Mayıs 1789</mark> États-Généraux · <mark>17 Haziran</mark> Ulusal Meclis (3. zümre tüm ulusu temsil ettiğini ilan eder) · <mark>20 Haziran</mark> Tenis Kortu Yemini (anayasa yapılana kadar dağılmama).</li>
+<li><mark>9 Temmuz</mark> Ulusal Kurucu Meclis (kurucu irade) · <mark>14 Temmuz</mark> Bastille (halk mobilizasyonu → siyasal baskı → devrim) · 1789 Haklar Bildirgesi (eşit yurttaşlık).</li>
+<li><mark>1791</mark> anayasal monarşi · <mark>10 Ağustos 1792</mark> Tuileries baskını (monarşi fiilen askıda) · <mark>21 Eylül 1792</mark> Ulusal Konvansiyon, Cumhuriyet.</li>
+<li>Özet zincir: zümresel toplum → temsil krizi → Ulusal Meclis → yurttaşlık → ulusal egemenlik → Cumhuriyet.</li>
 </ul>`,
     files: [`materyal/3-hafta/Fransiz_Devrimi_Zumrelerden_Ulusal_Egemenlige.pptx`],
     html: `
@@ -408,12 +522,20 @@ units: [
   },
   {
     id: `sanayi`, group: `h3`, no: `3.3`, title: `Britanya Sanayi Devrimi`,
-    short: `<ul class="short-list">
-<li>18. yüzyıl ortası: tarım toplumundan makineleşmiş kent ekonomisine.</li>
-<li>Spinning Jenny (<b>16 kat</b>), Watt buhar makinesi (akarsuya bağımlılık bitti), kömür, kanal, demiryolu.</li>
-<li>Fabrika sistemi: merkezi üretim, saat disiplini, uzmanlaşma.</li>
-<li>1900'de nüfusun <mark>%62</mark>'si kentte. İşçi sınıfı: haftalık ücret, 12–16 saat mesai, kadın ve çocuk işçi.</li>
-<li>Sonuçlar: kolera, dar konut → sendikalaşma, çalışma saatlerine sınır.</li>
+    short: `<h4>Üretimde kökten değişim</h4>
+<ul class="short-list">
+<li>18. yüzyıl ortası Britanya: insan ve hayvan gücünden <b>makineleşmiş kent ekonomisine</b>; sermaye birikimi ve maden zenginliği onu merkez yaptı.</li>
+<li>Tekstil: <b>Spinning Jenny</b> ile iplik üretimi <mark>16 kat</mark> arttı; mekanik dokuma maliyeti düşürdü; pamukta rekor hacimler.</li>
+<li><b>James Watt</b>'ın buhar makinesi üretimi akarsu kenarına bağımlılıktan kurtardı; madenlerde su tahliyesi, kömür kullanımı katlandı.</li>
+<li>Fabrika sistemi: merkezi üretim (ev atölyeleri yerine fabrika) · <b>saat disiplini</b> (vardiya, katı kurallar) · uzmanlaşma (her işçi tek hareket).</li>
+</ul>
+<h4>Kentleşme ve işçi sınıfı</h4>
+<ul class="short-list">
+<li><mark>1900'de nüfusun %62'si</mark> kentte; Manchester ve Liverpool kısa sürede metropol oldu.</li>
+<li>Kırsal yaşam (mevsimlik tempo, kendi gıdası, geniş aile dayanışması) → kentsel işçi (<b>haftalık ücret</b>, <mark>günde 12–16 saat</mark>, kadın ve çocuk işçi).</li>
+<li>Kanal (ucuz maden taşıma), demiryolu (pazarları bağladı), kömür (ağır sanayinin yakıtı).</li>
+<li>Zorluklar: kolera salgınları, dar konutlar → sendikalaşma ve çalışma saatlerine kademeli yasal sınırlar.</li>
+<li>Sonuç: üretimi, yerleşimi ve sosyal sınıfları yeniden tanımlayarak <b>çağdaş toplumun mimarı</b> oldu.</li>
 </ul>`,
     files: [`materyal/3-hafta/Britanya_Sanayi_Devrimi.pptx`],
     html: `
@@ -471,12 +593,24 @@ units: [
   },
   {
     id: `modernite`, group: `h3`, no: `3.4`, title: `Sosyoloji ve Modernite`,
-    short: `<ul class="short-list">
-<li><mark>Sosyoloji ve modernite zamandaştır.</mark></li>
-<li>Giddens: seküler-akılcı yaklaşım, siyasal kurumlar (ulus-devlet, demokrasi), ekonomik kurumlar (sanayi, kapitalist pazar).</li>
-<li>Üç devrim: Aydınlanma → pozitivizm · Fransız → yeni siyasal düzen · Sanayi → sınıflı sanayi toplumu.</li>
-<li>Comte: toplumsal fizik, toplum bir organizma. Durkheim: olgular dışsal, zorlayıcı, birer "şey".</li>
-<li>Formül: <b>Aydınlanma aklı + çifte devrim = sosyoloji</b>.</li>
+    short: `<h4>Modernite ve üç devrim</h4>
+<ul class="short-list">
+<li>Sosyoloji ve modernite <b>zamandaştır</b>; köken 19. yüzyıl Avrupa'sı, odak modern toplumsal bunalımlar.</li>
+<li><b>Giddens</b>'a göre modernitenin 3 bileşeni: <mark>seküler-akılcı yaklaşım · siyasal kurumlar (ulus-devlet, kitle demokrasisi) · ekonomik kurumlar (endüstriyel üretim, kapitalist pazar)</mark>.</li>
+<li>Üç devrim: <b>entelektüel</b> Aydınlanma → bilimsel yöntem ve pozitivizm · <b>siyasal</b> Fransız Devrimi → ulus-devlet, yurttaşlık, halk egemenliği · <b>ekonomik</b> Sanayi Devrimi → fabrika, kapitalizm, kentleşme, sınıflı toplum.</li>
+</ul>
+<h4>Aydınlanma ve sosyal bilimler</h4>
+<ul class="short-list">
+<li>18. yüzyıl Fransa'sı: dogmatizme karşı seküler aklın zaferi; Voltaire, Diderot, Rousseau'ya göre bilginin biricik kaynağı <b>akıl</b>; Kilise'ye ve mutlak monarşiye başkaldırı.</li>
+<li>Disiplinler: siyaset bilimi (devlet ve hükümet) · ekonomi (piyasa) · sosyoloji (devlet ve piyasa dışı ilişkiler) · tarih (geçmiş olgular) · antropoloji (kültür ve topluluklar).</li>
+<li><b>Comte:</b> önce <mark>"Toplumsal Fizik"</mark>; pozitivizm: yalnızca gözlem ve deneye dayalı bilgi meşru, spekülatif felsefe yerine pozitif olgular, toplum evrensel kanunlarla işleyen organizma.</li>
+<li><b>Durkheim</b> (1895): toplumsal olgular <b>"şey"</b> gibi ele alınmalı; bireysel bilincin dışında, zorlayıcı, nesnel yöntemle incelenebilir.</li>
+</ul>
+<h4>Çifte devrim</h4>
+<ul class="short-list">
+<li>Fransız Devrimi: monarşiyi, dinin siyasetteki tekelini ve zümre düzenini bitirdi; İnsan ve Yurttaş Hakları Bildirgesi (1789): "Eşitlik, Özgürlük, Kardeşlik".</li>
+<li>Sanayi Devrimi: buhar, fabrika, kırdan kente göç; <b>işçi sınıfı ile kapitalist</b> kutuplaşması.</li>
+<li>Sentez: Aydınlanma aklı (araç) + çifte devrim (yeni sorunlar) → sosyoloji, modern toplumun krizlerine bilimsel açıklama getirme çabası.</li>
 </ul>`,
     files: [`materyal/3-hafta/Sosyoloji_ve_Modernite.pptx`],
     html: `
@@ -559,12 +693,28 @@ units: [
   },
   {
     id: `imgelem`, group: `h4`, no: `4.1`, title: `Sosyolojik İmgelem (C. Wright Mills)`,
-    short: `<ul class="short-list">
-<li>Mills (1958 Amerikası): toplum ve birey birlikte ele alınmadıkça ikisi de anlaşılamaz.</li>
-<li>Sosyolojik imgelem: dışımızda ve benliğimizde olup biteni anlamamızı sağlayan düşünsel nitelik.</li>
-<li>Eksenler: <mark>biyografi, toplum, tarih</mark>. Üç soru: yapı, tarihsel dönem, insan tipleri.</li>
-<li>Kişisel sorun ↔ kamusal sorun: bireysel sorun yapının yansımasıdır (işsizlik örneği).</li>
-<li>İki duygu: ilgisizlik ve huzursuzluk. Doğa bilimleri hidrojen bombası ve teknolojik ethos yüzünden sorgulandı.</li>
+    short: `<h4>Sosyolojik imgelem</h4>
+<ul class="short-list">
+<li>Sosyolojik düşünmeyi diğerlerinden ayıran özelliklerin bütünü; <b>C. Wright Mills</b>. Bağlam: <mark>1958 Amerikası</mark>, 2. Dünya Savaşı sonrası; insan büyük değişimler karşısında şaşkın ve güçsüz.</li>
+</ul>
+<blockquote>"Toplumu ve bireyi birlikte ele almadıkça, ne bireyin hayatını ne de toplumun tarihini anlayabiliriz." (s. 8)</blockquote>
+<ul class="short-list">
+<li>İhtiyaç: dışarıdaki dünyada ve kendi benliğinde olup bitenleri anlamasını sağlayacak <b>düşünsel nitelik</b> (s. 10) = sosyolojik imgelem.</li>
+<li>Üç eksen: <mark>biyografi · toplum · tarih</mark>; biyografi ile tarih arasındaki ilişkiyi çözümler.</li>
+<li>Üç soru: toplumun yapısal düzeni ne? hangi tarihsel dönemin parçası? ne tür <b>insan tipleri</b> üretiyor?</li>
+<li>En uzak dönüşümlerin bireysel yansımalarını görmek; dar kalıplardan kurtulup şeylerin özünü yakalamak.</li>
+</ul>
+<h4>Kişisel ve kamusal sorunlar</h4>
+<ul class="short-list">
+<li><b>Kişisel yaşam sorunları:</b> bireyin dar/dolaysız yaşamı (bir kişinin işsizliği, aile içi anlaşmazlık). <b>Kamusal yapı sorunları:</b> kurumların ve tarihsel koşulların krizleri (kitlesel işsizlik, ekonomik kriz).</li>
+<li>Ayrımın amacı: bireysel sorunların yapının <b>yansıması</b> olduğunu göstermek; milyonların işsizliği yapının çöküşüdür, <b>biyografi tarihi yansıtır</b>.</li>
+<li>Kilit cümle: en bireysel sorunun bile tarihsel/toplumsal temelleri olduğunu kavradığımız an sosyolojik imgelem kazanırız.</li>
+</ul>
+<h4>Modern insan ve bilim</h4>
+<ul class="short-list">
+<li>İki duygu: <b>ilgisizlik/kayıtsızlık</b> (değerler sistemi ortadan kalkmış) · <b>huzursuzluk/endişe</b> (değerler tehdit altında, kaynak belirsiz). Kaynak: ekonomik bunalım, nükleer savaş korkusu, hidrojen bombası, Soğuk Savaş.</li>
+<li>Doğa bilimlerinin tahtı sarsıldı: fizik hidrojen bombasında araç oldu, <mark>teknolojik ethos</mark>un (teknolojiyi yücelten değer sistemi) önünü açtı; bilim askeri ve ekonomik güçlerce denetleniyor, yıkımın temsilcisi oldu.</li>
+<li>Sosyolojik imgelem doğa bilimlerinin yerini almaya başladı: insanı ve doğayı korur (etik, eleştirel), çözüm üretir; <b>özgürleştirici</b> bir düşünce biçimi.</li>
 </ul>`,
     files: [`materyal/4-hafta/Sosyolojik_Imgelem.pptx`, `materyal/4-hafta/Sosyolojik_Imgelem_Toplumbilimsel_Dusun.pptx`],
     html: `
@@ -641,12 +791,26 @@ units: [
   },
   {
     id: `dusunmek`, group: `h5`, no: `5.1`, title: `Sosyolojik Düşünmek (Bauman & May)`,
-    short: `<ul class="short-list">
-<li>Sosyoloji: kendine özgü soruları ve yaklaşımları olan bilimsel bir disiplin.</li>
-<li>Disiplinleri alan ya da yöntemle ayırmak yetersiz; asıl fark <mark>bilişsel perspektif</mark> (sorulan sorular).</li>
-<li>Ekonomi: maliyet-kâr · siyaset bilimi: güç/otorite · sosyoloji: ilişkisel bakış, <b>karşılıklı bağımlılık</b>.</li>
-<li>Sağduyu: sistemsiz, alışkanlığa dayalı bilgi. Doğa bilimlerinin sağduyuyla bağı yok; sosyoloji ondan kopamaz.</li>
-<li>Sosyoloji sağduyudan farklı: sistemli, geniş ilişkiler ağı, bütüncül.</li>
+    short: `<h4>Sosyal bilimleri ne ayırır?</h4>
+<ul class="short-list">
+<li>Bauman ve May: sosyoloji kendine özgü <b>soruları ve yaklaşım biçimleri</b> olan bilimsel disiplin; 19. yüzyılda modern toplumsal düzeni incelemek için doğdu.</li>
+<li>İki yaygın yaklaşım, ikisi de sorunlu: <b>1. alan ayrımı</b> (devlet / piyasa / geri kalan) → eleştiri: toplumsal yaşam bölünemez bütün · <b>2. yöntem ayrımı</b> → eleştiri: hepsi benzer prosedürleri izler.</li>
+</ul>
+<blockquote>"Ne kuzey yarımküreden güneye geçerken sosyolojiden antropolojiye geçiyoruz ne de yaşlandıkça tarihten sosyolojiye!" (s. 15)</blockquote>
+<ul class="short-list">
+<li>Örnek: kantinde kahve almak; fiyat (ekonomi), işletme kuralları (siyaset), masadaki sohbet (sosyoloji), kahve kültürü (tarih/antropoloji) aynı anda.</li>
+</ul>
+<h4>Bilişsel perspektif ve karşılıklı bağımlılık</h4>
+<ul class="short-list">
+<li>Asıl fark <mark>bilişsel perspektif</mark>: bir şeyi incelerken kullanılan genel zihinsel çerçeve; dış dünyadaki değil, <b>sorulan sorulardaki</b> farklılık.</li>
+<li>Ekonomi: maliyet-kâr, kıt kaynaklar · Siyaset bilimi: güç/otorite ve ürettiği eşitsizlikler.</li>
+<li>Sosyoloji bireyi daha geniş ilişkiler ağının parçası olarak ele alır: <b>ilişkisel bakış</b> (bizden önce var olan bir toplumda doğarız); buna <mark>karşılıklı bağımlılık</mark> (inter-dependency) derler (s. 18).</li>
+</ul>
+<h4>Sosyoloji ve sağduyu</h4>
+<ul class="short-list">
+<li><b>Sağduyu:</b> günlük hayatı yönlendiren sistemsiz, alışkanlığa dayalı bilgiler. Doğa bilimlerinin sağduyuyla bağı yok; sosyolog ise toplumun parçası, <b>sağduyuyu hesaba katmak zorunda</b>; sosyolojik olgular zaten anlamla yüklü.</li>
+<li>Örnek: fizikçi için elmanın yerçekimi hakkındaki "fikri" önemsiz; sosyolog evliliği incelerken insanların evlilik hakkındaki inançlarını hesaba katar.</li>
+<li>Sağduyu düzensiz, sistemsiz / sosyoloji sistemli · sağduyu dar deneyimle sınırlı / sosyoloji geniş ağ (Mills) · sağduyu gerçekliği <b>niyetlerin</b> sonucu sayar / sosyoloji bütüncül.</li>
 </ul>`,
     files: [`materyal/5-hafta/Sosyolojik_Dusunmek_1.pptx`, `materyal/5-hafta/Sosyolojik_Dusunmek_3.pptx`],
     html: `
@@ -708,13 +872,37 @@ units: [
   },
   {
     id: `bauman`, group: `h5`, no: `5.2`, title: `Bauman & May: Sosyolojik Mercekleri Yaratmak`,
-    short: `<ul class="short-list">
-<li>Sosyoloji, kendine has sorular ve yaklaşımlarla disiplinli bir pratik; terim 19. yüzyılın başında.</li>
-<li>Beşeri dünyada doğal ayrım yok; bilgi edinme yollarımız dünyayı kavrama çerçeveleridir.</li>
-<li>Fark bilişsel perspektifte: iktisat maliyet-yarar, siyaset bilimi iktidar-nüfuz; sosyoloji <mark>bağımlılık ağları</mark>.</li>
-<li>Sağduyu zengin ama düzensiz; rutinler içinde sistemli düşünemeyiz.</li>
-<li>Sağduyudan 3 fark: <b>sorumlu yöntem, sahanın boyutları, anlama/açıklama biçimi</b>.</li>
-<li>Tanıdık olan açıklama gerektirmez; alışkanlığı kırmak özgürleştirir. İktidar sahipleri sosyolojiyi "politik sadakatsizlikle" suçlar.</li>
+    short: `<h4>Disiplinli bir pratik <span class="ref">s. 13–14</span></h4>
+<ul class="short-list">
+<li>Amaç: sosyolojik düşünmenin kendimizi, birbirimizi ve sosyal çevremizi anlamadaki önemi. Sosyoloji kendine has soruları olan <b>disiplinli bir pratik</b>.</li>
+<li>Terim 19. yüzyılın erken döneminde; toplumsal düzeni ve değişimi araştırmak için gelişti; biçimi toplumsal dönüşümlerle evrilir.</li>
+</ul>
+<h4>Alana göre ayırmak neden sorunlu? <span class="ref">s. 14–16</span></h4>
+<ul class="short-list">
+<li>Basit yanıt (farklar dünyadaki ayrımları yansıtır) sorunlu: beşeri dünyada <mark>doğal ayrım yoktur</mark>; bilgi edinme yollarımız dünyayı kavrama çerçeveleridir.</li>
+<li>Pratikte de fark yok: hepsi olguları derler, doğrular, tekrar kontrol eder; sistematik disiplin idealine uyar; gözlem ve tarihsel bulguları analitik modellerle yorumlar.</li>
+</ul>
+<h4>Bilişsel perspektifler <span class="ref">s. 17–18</span></h4>
+<ul class="short-list">
+<li>Son umut: disiplinleri harekete geçiren <b>sorular</b>. <b>İktisat:</b> eylemlerin maliyet–yarar ilişkisi, kıt kaynakların idaresi ve paylaşımı · <b>Siyaset bilimi:</b> iktidar ve <b>nüfuz</b> asimetrisi üzerinden eylemler.</li>
+<li>Sosyolojinin farkı: eylemleri daha geniş temsillerin unsuru görmek; temsil = <mark>karşılıklı bağımlılık ağı</mark>nda eklemlenmiş aktörlerin tesadüf olmayan topluluğu. Bireyler araştırmaya ağın <b>üyeleri/partnerleri</b> olarak girer.</li>
+</ul>
+<h4>Sağduyu ve sosyoloji <span class="ref">s. 19–21</span></h4>
+<ul class="short-list">
+<li>Sağduyu: zengin ama düzensiz, sistemsiz, kimi zaman tarif edilemez bilgi. Fen bilimleri sağduyuyla ilgilenmez; nesneleri özel koşullarda (partikül hızlandırıcı, mikroskop) çıkar, bilgisi sağduyuyla <b>rekabet etmez</b>.</li>
+<li>Hepimiz örtük bilgisi olan <b>yetenekli aktörleriz</b>, ama rutine gömülüyken başımızdan geçenleri sistematik düşünemeyiz. Sosyolog da deneyimin parçası, bilgiden tamamen kopamaz.</li>
+</ul>
+<h4>Sağduyudan üç fark <span class="ref">s. 22–24</span></h4>
+<ul class="short-list">
+<li>Sosyolog hem <b>içsel hem dışsal</b> bakış açısına sahip olmalı; aile, mahalle, ulus, kilise zaten anlamla yüklü.</li>
+<li><b>1. Sorumlu yöntem:</b> kurumsal yöntemlere bağlı; delilli ifadeyi test edilmemiş fikirden ayırır · <b>2. Sahanın boyutları:</b> tek yaşam deneyimi taraflı; birden çok yaşam dünyası karşılaştırılır.</li>
+<li><b>3. Anlama ve açıklama biçimi:</b> sağduyu açıklamayı kendi yaşam dünyasından çeker, olayı birinin <b>kasıtlı eylemine</b> bağlar; sosyoloji tek aktörden değil <b>temsillerden</b> başlar, yalıtılmış birey metaforunu reddeder.</li>
+</ul>
+<h4>Alışkanlığı kırmak ve tepkiler <span class="ref">s. 25–28</span></h4>
+<ul class="short-list">
+<li>Sağduyunun gücü <b>ikili</b>: yol gösterir ama sorgulamaz, pratikte kendini onaylar. Sık tekrarlanan tanıdık olur, tanıdık açıklama gerektirmez.</li>
+<li>Alışkanlığın kalkması: daha çok öz-farkındalık, diğerlerini anlama, daha çok özgürlük ve kontrol. Doğal ve değişmez görünenin beşeri güçlerce kurulduğunu görmek olasılıklar açar.</li>
+<li>"Politik sadakatsizlik" suçlamaları genelde şirketler, hükümetler ve iktidar sahiplerinden gelir; mevcut durumun "doğal" olduğunu iddia edenlerde belirgin.</li>
 </ul>`,
     fromPdf: {
       name: `Zygmunt Bauman & Tim May, <i>Sosyolojik Düşünmek</i> (çev. Akın Emre Pilgir, Ayrıntı Yayınları), Giriş: "Sosyolojik Mercekleri Yaratmak" (s. 13–28)`,
@@ -793,13 +981,33 @@ units: [
   },
   {
     id: `comte`, group: `h6`, no: `6.1`, title: `Auguste Comte: Pozitivizm ve Sosyoloji`,
-    short: `<ul class="short-list">
-<li>1798 doğumlu; Saint-Simon'la çalıştı (1817–1824). Eserleri: <i>Pozitif Felsefe Dersleri</i>, <i>Pozitif Yönetim Biçimi</i>.</li>
-<li>Amaç: devrim sonrası kargaşaya karşı düzen; otorite ile ilerlemeyi birleştirmek.</li>
-<li>Üç hâl: <mark>teolojik (Ortaçağ) → metafizik (14. yy–Devrim) → pozitif (Devrimle başlayan)</mark>.</li>
-<li>Bilimler hiyerarşisi: matematik → astronomi → fizik → kimya → biyoloji → sosyoloji ("kraliçe bilim").</li>
-<li>"Bilmek öngörmek, öngörmek yapmaktır." Hiyerarşi: üstte pozitivist sosyologlar, altta işçiler.</li>
-<li>Eleştiri: Touraine ("Ben'den Biz'e"), Marcuse (muhafazakâr amaçlara hizmet).</li>
+    short: `<h4>Hayatı ve görüşleri</h4>
+<ul class="short-list">
+<li><mark>1798</mark> Katolik, monarşist bir ailede doğar; École Polytechnique'te doğa bilimleri · <mark>1817–1824</mark> <b>Saint-Simon</b>'un çalışma arkadaşı (endüstri toplumu) · <mark>1830–1842</mark> <i>Pozitif Felsefe Dersleri</i> · <mark>1851–1854</mark> <i>Pozitif Yönetim Biçimi</i>.</li>
+<li>Fizik, kimya ve matematiğin yöntemi toplumsal sorunlara uygulanırsa çatışmanın kaynağı olan fikir ayrılıkları giderilir. Fransız Devrimi sonrası kargaşadan etkilendi, <b>düzenli toplum</b> modeli aradı.</li>
+<li><b>Otorite + ilerleme</b> sentezi: muhafazakârlar gibi hiyerarşiye, devrimciler gibi reforma inanır. Amaç: düzeni ve birliği kuracak kanunları tespit etmek.</li>
+</ul>
+<h4>Pozitif felsefe ve sosyoloji</h4>
+<blockquote>"Pozitif Felsefe'nin ilk karakteristik özelliği bütün olguları değişmez doğa yasalarına tabi şeyler olarak görmesidir." — Comte</blockquote>
+<ul class="short-list">
+<li>Yasalar fiziksel, biyolojik ve <b>toplumsal</b> olguları da kapsar. Empirik ve pozitivist sosyal bilim → sosyolojinin <b>isim babası</b>; önce <mark>"sosyal fizik"</mark> dedi.</li>
+</ul>
+<h4>Üç hâl yasası</h4>
+<ul class="short-list">
+<li>İnsanlık tarihini evrimsel olarak belirleyen temel yasa; zihnin üç düşünce biçimi üç toplum biçimine denk düşer: <mark>teolojik → metafizik → pozitif</mark>.</li>
+<li><b>Teolojik:</b> Mutlak bilgi arayışı, olgular doğaüstü varlıkların eylemi (Avrupa Ortaçağı) · <b>Metafizik (soyut):</b> teolojiğin uzantısı, soyut kavramlarla açıklama (14. yy'dan Fransız Devrimi'ne) · <b>Pozitif:</b> doğa ve toplum yasaları, bilimsel yöntem (en ileri; Fransız Devrimi'yle başladı).</li>
+</ul>
+<h4>Bilimler hiyerarşisi ve toplum</h4>
+<ul class="short-list">
+<li>Basitten karmaşığa: <mark>matematik → astronomi → fizik → kimya → biyoloji → sosyoloji</mark>; en karmaşık olduğu için sosyoloji <b>"kraliçe bilim"</b>.</li>
+<li>Toplum bireylere indirgenemez; bireylerden <b>daha temel ve somut</b>.</li>
+<li>Sosyoloji toplumu iyileştirmek için de kullanılmalı: yasaları bulur, öngörür, müdahale eder. <b>"Bilmek öngörmek, öngörmek yapmaktır."</b></li>
+<li>Düzensizlik bütün kötülüklerin kaynağı; düzen + ilerleme. Hiyerarşi zorunlu, devlet düzenler (<b>otoriter devletçilik</b>): en üstte pozitivist sosyologlar, en altta işçiler (proletarya); toplum iş bölümlü bir <b>organizma</b>.</li>
+</ul>
+<h4>Eleştiriler</h4>
+<ul class="short-list">
+<li><b>Alain Touraine:</b> Comte için asıl mesele "bireyciliğin yanılsamalarından kurtulmak, <b>Ben'den Biz'e</b> geçmek" (<i>Modernliğin Eleştirisi</i>).</li>
+<li><b>Herbert Marcuse</b> (<i>Akıl ve Devrim</i>): toplumsal düzeni yasal olgu alanı gördüğü için pozitivizm <b>muhafazakâr amaçlara</b> hizmet eder.</li>
 </ul>`,
     files: [`materyal/6-hafta/Auguste_Comte_Pozitivizm_ve_Sosyoloji.pptx`, `materyal/6-hafta/Auguste_Comte.pptx`],
     html: `
@@ -874,11 +1082,23 @@ units: [
 `
   },
   {
-    id: `tekrar`, group: `tekrar`, no: `T`, title: `Kim, Ne Dedi? Kişiler, Kavramlar, Tarihler`,
-    short: `<ul class="short-list">
-<li><b>Kişiler:</b> Wallerstein (sosyal bilimlerin kuruluşu) · Comte (pozitivizm, üç hâl) · Durkheim (olgular "şey") · Kant (Sapere Aude) · Sieyès (Üçüncü Zümre) · Giddens (modernitenin 3 bileşeni) · Mills (sosyolojik imgelem) · Bauman & May (bilişsel perspektif, sağduyu).</li>
-<li><b>Kavramlar:</b> nomotetik / idiografik · pozitivizm · sosyal fizik · sağduyu · karşılıklı bağımlılık · teknolojik ethos.</li>
-<li><b>Tarihler:</b> 5 Mayıs, 17 Haziran, 14 Temmuz 1789 · 21 Eylül 1792 · 1798 Comte · 1895 Durkheim · 1900 %62 kentli · 1958 Mills.</li>
+    id: `tekrar`, group: `genel`, no: `T`, title: `Kim, Ne Dedi? Kişiler, Kavramlar, Tarihler`,
+    short: `<h4>Kişiler</h4>
+<ul class="short-list">
+<li><b>Wallerstein:</b> <i>Sosyal Bilimleri Açın</i>; disiplinler "nesnel" bilgi çabasının parçası · <b>Comte:</b> sosyoloji, sosyal fizik, üç hâl, kraliçe bilim · <b>Durkheim:</b> 1895, olgular "şey" · <b>Kant:</b> "Sapere Aude!" · <b>Descartes:</b> metodolojik şüphe · <b>Newton:</b> evrensel yasalar.</li>
+<li><b>Diderot & d'Alembert:</b> Ansiklopedi · <b>Voltaire:</b> hoşgörü · <b>Locke:</b> tabula rasa · <b>Hume:</b> kuşkuculuk · <b>Smith:</b> görünmez el · <b>Montesquieu:</b> güçler ayrılığı · <b>Rousseau:</b> Toplum Sözleşmesi · <b>Sieyès:</b> "Üçüncü Zümre Nedir?" · <b>Watt:</b> buhar makinesi.</li>
+<li><b>Giddens:</b> modernitenin 3 bileşeni · <b>Mills:</b> sosyolojik imgelem · <b>Bauman & May:</b> bilişsel perspektif, karşılıklı bağımlılık, sağduyu · <b>Saint-Simon:</b> Comte'un arkadaşı · <b>Touraine:</b> Ben'den Biz'e · <b>Marcuse:</b> pozitivizm muhafazakâr.</li>
+<li>PDF'ten: <b>Ranke</b> "gerçekten ne oldu?" · <b>C. P. Snow</b> "iki kültür" · <b>Hooke</b> 1663 Royal Society · <b>Mill</b> Comte ile bilimin nesnelliği.</li>
+</ul>
+<h4>Kavramlar</h4>
+<ul class="short-list">
+<li>Nomotetik (yasa koyan) / idiografik (tekil olay) · pozitivizm · sosyal fizik · Ancien Régime · États-Généraux · sosyolojik imgelem · teknolojik ethos · bilişsel perspektif · karşılıklı bağımlılık · sağduyu.</li>
+<li>PDF'ten: scientia ("bilgi") · Kartezyen dualizm · ceteris paribus.</li>
+</ul>
+<h4>Tarihler</h4>
+<ul class="short-list">
+<li>1614 · 1663 · 1776 · 5 Mayıs, 17 Haziran, 20 Haziran, 9 Temmuz, 14 Temmuz 1789 · 1791 · 10 Ağustos ve 21 Eylül 1792 · 1798 Comte · 1817–1824 · 1830–1842 · 1851–1854.</li>
+<li>1850–1914 disiplinler üniversitede · 1895 Durkheim · 1900 %62 kentli · 1945 kurumsallaşma tamam · 1958 Mills.</li>
 </ul>`,
     html: `
 <p class="lead">Sınav öncesi hızlı tekrar: bütün haftalardaki kişiler, kavramlar ve tarihler tek yerde. <span class="badge">PDF</span> işareti olanlar okuma metinlerindeki sarı işaretli yerlerden gelir.</p>

@@ -56,11 +56,11 @@
   // Sunumların sitede açılan PDF önizlemeleri: materyal/x.pptx -> onizleme/x.pdf
   const previewOf = file => (/\.pdf$/i.test(file) ? file : file.replace(/^materyal\//, 'onizleme/').replace(/\.pptx?$/i, '.pdf'));
   const DL_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-4.5-4.5M12 15l4.5-4.5M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>';
-  const viewBtn = (file, title, label, cls = 'btn sm') =>
-    `<button class="${cls}" data-act="view" data-file="${esc(file)}" data-title="${esc(title)}">${label}</button>`;
+  const viewBtn = (file, title, label, cls = 'btn sm', page) =>
+    `<button class="${cls}" data-act="view" data-file="${esc(file)}" data-title="${esc(title)}"${page ? ` data-page="${page}"` : ''}>${label}</button>`;
 
-  // Özet PDF'leri (detaylı: ozet.pdf, kısa: ozet-kisa.pdf) varsa kutularını göster
-  const PDFS = { 'ozet.pdf': 'Ozeti', 'ozet-kisa.pdf': 'Kisa Ozeti' };
+  // Özet PDF'leri (detaylı, kısa, tek sayfa) varsa kutularını göster
+  const PDFS = { 'ozet.pdf': 'Ozeti', 'ozet-kisa.pdf': 'Kisa Ozeti', 'tek-sayfa.pdf': 'Tek Sayfa' };
   const pdfOk = {};
   function showPdfLinks(c) {
     Object.keys(PDFS).forEach(name => {
@@ -144,6 +144,7 @@
     closeViewer();
     if (!cid || !byId[cid]) { course = null; return renderHome(); }
     setCourse(byId[cid]);
+    if (view === 'tek-sayfa') return renderOnePager();
     if (view === 'kartlar') return renderDeckView(arg);
     if (view === 'test') return renderQuizSetup(arg);
     if (view === 'defter') return renderNotebook();
@@ -168,6 +169,7 @@
           <li><b>Not al</b><span>Her konunun altındaki "Notlarım" alanına yaz; hepsi Defterim'de toplanır.</span></li>
           <li><b>Kartlarla tekrar et</b><span>Bildiklerini ayır, bilmediklerine dön.</span></li>
           <li><b>Test çöz</b><span>Yanlışların kaydedilir, sonra sadece onları çözebilirsin.</span></li>
+          <li><b>Son tekrar</b><span>Çalıştıktan sonra kısa özetle ilerle; sınavdan önce Tek sayfa'ya bak.</span></li>
         </ol>
         ${COURSES.length ? `<div class="course-grid">${COURSES.map(courseCard).join('')}</div>`
           : `<p class="empty">Henüz ders eklenmedi.</p>`}
@@ -223,13 +225,14 @@
         </div>`);
     }
     const files = (u.files || []).map(f => (course.materials || []).find(m => m.file === f)).filter(Boolean);
+    const slide = Number(((u.slides || '').match(/\d+/) || [])[0]) || 0;
     if (files.length) {
       parts.push(`
         <div class="source">
           <span class="source-label">Kaynak ${files.length > 1 ? 'sunumlar' : 'sunum'}</span>
           ${files.map(m => `
             <span class="file-chip">
-              ${viewBtn(m.file, m.title, `${m.title} <small>Görüntüle</small>`, 'chip-main')}
+              ${viewBtn(m.file, m.title, `${m.title} <small>${slide && files.length === 1 ? `Görüntüle · slayt ${slide}` : 'Görüntüle'}</small>`, 'chip-main', files.length === 1 && slide)}
               <a class="chip-dl" href="${matUrl(course, m.file)}" download aria-label="İndir: ${esc(m.title)}" title="İndir (${m.size})">${DL_ICON}</a>
             </span>`).join('')}
         </div>`);
@@ -294,7 +297,8 @@
             </div>
             <ol class="unit-list">${unitList(u)}</ol>
             ${pdfBox('ozet.pdf', 'Detaylı özet PDF', 'Tüm konular tek dosyada, yazdırmaya uygun')}
-            ${pdfBox('ozet-kisa.pdf', 'Kısa özet PDF', 'Sınav öncesi hızlı tekrar için birkaç sayfa')}
+            ${pdfBox('ozet-kisa.pdf', 'Kısa özet PDF', 'Çalıştıktan sonra tekrar için; sınavda gereken her şey')}
+            ${course.onePager ? `<a class="op-link" href="${link(course.id, 'tek-sayfa')}"><b>Tek sayfa</b><small>Bütün ders bir bakışta →</small></a>` : ''}
           </div>
         </aside>
 
@@ -334,6 +338,35 @@
     linkPageRefs(u);
     growAll();
     if (keepScroll) window.scrollTo(0, y);
+  }
+
+  // ---------- Tek sayfa ----------
+  function renderOnePager() {
+    mode = 'onepager';
+    setChrome('tek-sayfa');
+    document.title = `Tek sayfa · ${course.title}`;
+    const sections = (course.onePager || []).filter(x => unitById[x.u]);
+    const card = (x, i) => {
+      const u = unitById[x.u];
+      const g = groupById[u.group];
+      const newGroup = g && (i === 0 || unitById[sections[i - 1].u].group !== u.group);
+      return `
+        <section class="op">
+          ${newGroup ? `<p class="op-group">${g.title}</p>` : ''}
+          <a class="op-head" href="${link(course.id, 'ozet', u.id)}"><span class="num">${u.no}</span><span>${u.title}${u.fromPdf ? ' <span class="badge">PDF</span>' : ''}</span></a>
+          <ul>${x.items.map(t => `<li>${t}</li>`).join('')}</ul>
+        </section>`;
+    };
+    app.innerHTML = `
+      <section class="practice onepager">
+        <header class="practice-head">
+          <h1>Tek sayfa</h1>
+          <p class="muted">Bütün dersin en kritik bilgileri bir bakışta: sınavdan hemen önce son kontrol için. Bir konunun başlığına basınca o konunun özetine gidersin; ayrıntılar kısa ve detaylı özette.</p>
+        </header>
+        ${pdfBox('tek-sayfa.pdf', 'Tek sayfa PDF', 'Bu sayfanın tek A4 sayfalık, yazdırmaya uygun hâli', 'pdf-card wide')}
+        ${sections.length ? `<div class="op-grid">${sections.map(card).join('')}</div>` : '<p class="muted">Bu ders için tek sayfa özet henüz hazırlanmadı.</p>'}
+      </section>`;
+    showPdfLinks(course);
   }
 
   // ---------- Defterim ----------
@@ -416,7 +449,8 @@
         </header>
         <div class="pdf-pair">
           ${pdfBox('ozet.pdf', 'Detaylı özet PDF', 'Sitedeki tüm konu özetleri tek dosyada (A4, yazdırmaya uygun)', 'pdf-card big')}
-          ${pdfBox('ozet-kisa.pdf', 'Kısa özet PDF', 'Her konunun en önemli noktaları; sınav öncesi hızlı tekrar', 'pdf-card big')}
+          ${pdfBox('ozet-kisa.pdf', 'Kısa özet PDF', 'Çalıştıktan sonra tekrar için; her konuda sınavda gereken her şey', 'pdf-card big')}
+          ${pdfBox('tek-sayfa.pdf', 'Tek sayfa PDF', 'Bütün dersin en kritik bilgileri tek A4 sayfada; sınav sabahı için', 'pdf-card big')}
         </div>
         <h2 class="section-title">Orijinal materyaller</h2>
         ${list}
