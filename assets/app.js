@@ -59,23 +59,33 @@
   const viewBtn = (file, title, label, cls = 'btn sm') =>
     `<button class="${cls}" data-act="view" data-file="${esc(file)}" data-title="${esc(title)}">${label}</button>`;
 
-  // PDF özeti varsa görüntüleme/indirme kutularını göster
+  // Özet PDF'leri (detaylı: ozet.pdf, kısa: ozet-kisa.pdf) varsa kutularını göster
+  const PDFS = { 'ozet.pdf': 'Ozeti', 'ozet-kisa.pdf': 'Kisa Ozeti' };
   const pdfOk = {};
-  const pdfUrl = c => `dersler/${c.id}/ozet.pdf`;
   function showPdfLinks(c) {
-    const apply = ok => {
-      $$('[data-pdf]').forEach(box => { box.hidden = !ok; });
-      $$('[data-pdf-dl]').forEach(a => {
-        a.href = pdfUrl(c);
-        a.setAttribute('download', fileName(`${c.title} ${c.exam || 'Ders'} Ozeti.pdf`));
+    Object.keys(PDFS).forEach(name => {
+      const key = `${c.id}/${name}`;
+      const apply = ok => $$(`[data-pdf="${name}"]`).forEach(box => {
+        box.hidden = !ok;
+        const a = box.querySelector('[data-pdf-dl]');
+        if (a) {
+          a.href = matUrl(c, name);
+          a.setAttribute('download', fileName(`${c.title} ${c.exam || 'Ders'} ${PDFS[name]}.pdf`));
+        }
       });
-    };
-    if (c.id in pdfOk) return apply(pdfOk[c.id]);
-    apply(false);
-    fetch(pdfUrl(c), { method: 'HEAD' })
-      .then(r => r.ok, () => false)
-      .then(ok => { pdfOk[c.id] = ok; if (course === c) apply(ok); });
+      if (key in pdfOk) return apply(pdfOk[key]);
+      apply(false);
+      fetch(matUrl(c, name), { method: 'HEAD' })
+        .then(r => r.ok, () => false)
+        .then(ok => { pdfOk[key] = ok; if (course === c) apply(ok); });
+    });
   }
+  const pdfBox = (name, label, desc, cls = 'pdf-card') => `
+    <div class="${cls}" data-pdf="${name}" hidden>
+      <span><b>${label}</b><small>${desc}</small></span>
+      <div class="row left">${viewBtn(name, `${course.title} — ${label}`, 'Görüntüle', 'btn sm primary')}<a class="btn sm" data-pdf-dl href="#" download>İndir</a></div>
+    </div>`;
+  const isShort = () => store.view === 'short';
 
   // ---------- Durum ----------
   let course = null;
@@ -264,6 +274,7 @@
     const s = stats(course);
     const read = !!p.read[u.id];
     const g = groupById[u.group];
+    const short = !!u.short && isShort();
     document.title = `${u.title} · ${course.title}`;
     const y = window.scrollY;
 
@@ -282,10 +293,8 @@
               <p>${s.known}/${course.cards.length} kart biliniyor · ${s.wrong} yanlış soru · ${s.notes} konuda not</p>
             </div>
             <ol class="unit-list">${unitList(u)}</ol>
-            <div class="pdf-card" data-pdf hidden>
-              <span><b>Özet PDF</b><small>Tüm konular tek dosyada, yazdırmaya uygun</small></span>
-              <div class="row left">${viewBtn('ozet.pdf', `${course.title} — Özet`, 'Görüntüle', 'btn sm primary')}<a class="btn sm" data-pdf-dl href="#" download>İndir</a></div>
-            </div>
+            ${pdfBox('ozet.pdf', 'Detaylı özet PDF', 'Tüm konular tek dosyada, yazdırmaya uygun')}
+            ${pdfBox('ozet-kisa.pdf', 'Kısa özet PDF', 'Sınav öncesi hızlı tekrar için birkaç sayfa')}
           </div>
         </aside>
 
@@ -293,9 +302,16 @@
           <header class="unit-head">
             <p class="eyebrow">${g ? `${g.title} · ` : ''}${word(course)} ${u.no}${u.slides ? ` · ${u.slides}` : ''}</p>
             <h1>${u.title}</h1>
+            ${u.short ? `
+            <div class="view-toggle" role="group" aria-label="Özet türü">
+              <button data-act="set-view" data-view="full" aria-pressed="${!short}">Detaylı özet</button>
+              <button data-act="set-view" data-view="short" aria-pressed="${short}">Kısa özet</button>
+            </div>` : ''}
             ${sourceBox(u)}
           </header>
-          <div class="prose">${u.html}</div>
+          ${short
+            ? `<div class="prose short">${u.short}<p class="short-more"><button class="link-btn" data-act="set-view" data-view="full">Ayrıntıların hepsi için detaylı özete geç →</button></p></div>`
+            : `<div class="prose">${u.html}</div>`}
 
           <section class="notes-box">
             <div class="notes-head"><h2>Notlarım</h2><span class="note-status" aria-live="polite"></span></div>
@@ -398,9 +414,9 @@
           <h1>Dosyalar</h1>
           <p class="muted">"Görüntüle" dosyayı sitede açar; sunumlar PDF önizlemesi olarak gösterilir. "İndir" orijinal dosyayı indirir.</p>
         </header>
-        <div class="pdf-card big" data-pdf hidden>
-          <span><b>Özet PDF</b><small>Bu sitedeki tüm konu özetleri tek dosyada (A4, yazdırmaya uygun)</small></span>
-          <div class="row left">${viewBtn('ozet.pdf', `${course.title} — Özet`, 'Görüntüle', 'btn sm primary')}<a class="btn sm" data-pdf-dl href="#" download>İndir</a></div>
+        <div class="pdf-pair">
+          ${pdfBox('ozet.pdf', 'Detaylı özet PDF', 'Sitedeki tüm konu özetleri tek dosyada (A4, yazdırmaya uygun)', 'pdf-card big')}
+          ${pdfBox('ozet-kisa.pdf', 'Kısa özet PDF', 'Her konunun en önemli noktaları; sınav öncesi hızlı tekrar', 'pdf-card big')}
         </div>
         <h2 class="section-title">Orijinal materyaller</h2>
         ${list}
@@ -863,6 +879,11 @@
       case 'quiz-retry-wrong': startQuiz(quiz.log.filter(x => !x.ok).map(x => x.item.q)); break;
       case 'quiz-new': renderQuizSetup(); window.scrollTo(0, 0); break;
       case 'view': openViewer(el.dataset.file, el.dataset.title, Number(el.dataset.page) || 1); break;
+      case 'set-view':
+        store.view = el.dataset.view === 'short' ? 'short' : 'full';
+        save();
+        renderUnit(p.last, true);
+        break;
       case 'viewer-close': history.back(); break;
       case 'viewer-zoom': {
         const z = Math.min(Math.max(viewer.zoom + Number(el.dataset.z), 0), ZOOMS.length - 1);

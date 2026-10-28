@@ -57,6 +57,43 @@ function loadCourses() {
   return ctx.window.DERSLER || [];
 }
 
+// Kısa özet: her konunun "short" listesi, konular art arda akar
+const shortCss = `
+  .unit-s { break-inside: avoid; margin: 0 0 12pt; }
+  .unit-s .eyebrow { margin: 0 0 2pt; }
+  .unit-s h2 { font: 700 13pt/1.25 var(--serif); margin: 0 0 6pt; }
+  .group-s { font: 700 10pt/1.2 var(--sans); letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin: 16pt 0 8pt; padding-bottom: 3pt; border-bottom: 1px solid var(--line); }
+  .short-list { margin: 0; padding-left: 14pt; }
+  .short-list li { margin: 0 0 3pt; font-size: 10.2pt; line-height: 1.45; }
+  .cover.small h1 { font-size: 22pt; }
+  .cover.small .sub { margin-bottom: 10pt; }
+`;
+
+function shortHtml(c) {
+  const word = c.unitWord || 'Ünite';
+  const groups = Object.fromEntries((c.groups || []).map(g => [g.id, g]));
+  const units = c.units.filter(u => u.short);
+  return `<!doctype html><html lang="tr"><head><meta charset="utf-8">
+<style>${css}</style><style>${printCss}</style><style>${shortCss}</style></head>
+<body style="--hue:${c.hue ?? 285}">
+  <header class="cover small">
+    <p class="eyebrow">Ecem'in Dersleri · Kısa özet</p>
+    <h1>${c.title}</h1>
+    <p class="sub">${[c.exam && `${c.exam} için hızlı tekrar`, 'Ayrıntılar için detaylı özet PDF\'i'].filter(Boolean).join(' · ')}</p>
+  </header>
+  ${units.map((u, i) => {
+    const g = groups[u.group];
+    const head = g && (i === 0 || units[i - 1].group !== u.group) ? `<p class="group-s">${g.title}</p>` : '';
+    return `
+  <section class="unit-s">${head}
+    <p class="eyebrow">${word} ${u.no}${u.fromPdf ? ` · <span class="badge">PDF'ten</span>` : ''}</p>
+    <h2>${u.title}</h2>
+    ${u.short}
+  </section>`;
+  }).join('')}
+</body></html>`;
+}
+
 function pageHtml(c) {
   const word = c.unitWord || 'Ünite';
   const groups = Object.fromEntries((c.groups || []).map(g => [g.id, g]));
@@ -107,19 +144,23 @@ function pageHtml(c) {
   const page = await browser.newPage();
   await page.emulateMedia({ media: 'print', colorScheme: 'light' });
   for (const c of courses) {
-    await page.setContent(pageHtml(c), { waitUntil: 'load' });
-    const out = path.join(root, 'dersler', c.id, 'ozet.pdf');
-    await page.pdf({
-      path: out,
-      format: 'A4',
-      printBackground: true,
-      preferCSSPageSize: true,
-      displayHeaderFooter: true,
-      headerTemplate: '<span></span>',
-      footerTemplate: `<div style="width:100%;padding:0 15mm;font:8px Inter,Arial,sans-serif;color:#888;display:flex;justify-content:space-between">
-        <span>Ecem'in Dersleri · ${c.title}</span><span><span class="pageNumber"></span> / <span class="totalPages"></span></span></div>`
-    });
-    console.log(`✓ ${path.relative(root, out)}`);
+    const outputs = [['ozet.pdf', pageHtml(c), c.title]];
+    if (c.units.some(u => u.short)) outputs.push(['ozet-kisa.pdf', shortHtml(c), `${c.title} · Kısa özet`]);
+    for (const [name, html, label] of outputs) {
+      await page.setContent(html, { waitUntil: 'load' });
+      const out = path.join(root, 'dersler', c.id, name);
+      await page.pdf({
+        path: out,
+        format: 'A4',
+        printBackground: true,
+        preferCSSPageSize: true,
+        displayHeaderFooter: true,
+        headerTemplate: '<span></span>',
+        footerTemplate: `<div style="width:100%;padding:0 15mm;font:8px Inter,Arial,sans-serif;color:#888;display:flex;justify-content:space-between">
+          <span>Ecem'in Dersleri · ${label}</span><span><span class="pageNumber"></span> / <span class="totalPages"></span></span></div>`
+      });
+      console.log(`✓ ${path.relative(root, out)}`);
+    }
   }
   await browser.close();
 })().catch(err => { console.error(err.message); process.exit(1); });
