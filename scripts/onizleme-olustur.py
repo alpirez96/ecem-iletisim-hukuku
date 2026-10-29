@@ -1,6 +1,6 @@
-"""Sunumlar (PPTX) için sitede "Görüntüle" ile açılan PDF önizlemelerini üretir.
+"""Sunumlar (PPTX) ve Word belgeleri (DOCX) için sitede "Görüntüle" ile açılan PDF önizlemelerini üretir.
 
-dersler/<ders>/materyal/<yol>.pptx  ->  dersler/<ders>/onizleme/<yol>.pdf
+dersler/<ders>/materyal/<yol>.pptx|.docx  ->  dersler/<ders>/onizleme/<yol>.pdf
 
     python3 scripts/onizleme-olustur.py            # eksik önizlemeleri üret
     python3 scripts/onizleme-olustur.py --hepsi    # hepsini yeniden üret
@@ -51,7 +51,7 @@ def fixed_copy(src, dst):
 def main():
     redo = '--hepsi' in sys.argv
     soffice = shlex.split(os.environ.get('SOFFICE', 'soffice'))
-    sources = sorted(ROOT.glob('dersler/*/materyal/**/*.pptx'))
+    sources = sorted([*ROOT.glob('dersler/*/materyal/**/*.pptx'), *ROOT.glob('dersler/*/materyal/**/*.docx')])
     with tempfile.TemporaryDirectory() as tmp:
         for src in sources:
             course = src.relative_to(ROOT / 'dersler').parts[0]

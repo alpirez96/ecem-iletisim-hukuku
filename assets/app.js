@@ -53,8 +53,8 @@
     };
   };
 
-  // Sunumların sitede açılan PDF önizlemeleri: materyal/x.pptx -> onizleme/x.pdf
-  const previewOf = file => (/\.pdf$/i.test(file) ? file : file.replace(/^materyal\//, 'onizleme/').replace(/\.pptx?$/i, '.pdf'));
+  // Sunum ve Word belgelerinin sitede açılan PDF önizlemeleri: materyal/x.pptx -> onizleme/x.pdf
+  const previewOf = file => (/\.pdf$/i.test(file) ? file : file.replace(/^materyal\//, 'onizleme/').replace(/\.(pptx?|docx?)$/i, '.pdf'));
   const DL_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-4.5-4.5M12 15l4.5-4.5M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>';
   const viewBtn = (file, title, label, cls = 'btn sm', page) =>
     `<button class="${cls}" data-act="view" data-file="${esc(file)}" data-title="${esc(title)}"${page ? ` data-page="${page}"` : ''}>${label}</button>`;
@@ -740,7 +740,7 @@
         <button class="btn icon" data-act="viewer-close" aria-label="Kapat">✕</button>
         <div class="viewer-title">
           <b>${esc(title)}</b>
-          <small>${isPreview ? 'Sunum önizlemesi · ' : ''}Sayfa <input class="viewer-page" type="number" min="1" value="1" inputmode="numeric" aria-label="Sayfa numarası"> / <span class="viewer-total">…</span></small>
+          <small>${isPreview ? (/\.docx?$/i.test(file) ? 'Belge önizlemesi · ' : 'Sunum önizlemesi · ') : ''}Sayfa <input class="viewer-page" type="number" min="1" value="1" inputmode="numeric" aria-label="Sayfa numarası"> / <span class="viewer-total">…</span></small>
         </div>
         <div class="viewer-tools">
           <button class="btn icon" data-act="viewer-zoom" data-z="-1" aria-label="Uzaklaştır">−</button>

@@ -48,7 +48,7 @@ Bütün metinler ters tırnaklı şablon dizesidir. Bu yüzden içerikte ` ve `$
 | `exam`, `hue`, `description`, `source` | önerilir | |
 | `unitWord` | hayır | Konu etiketi ("Konu 2.1"). Yoksa "Ünite". |
 | `groups` | hayır | Varsa kenar çubuğu, kart/test seçimi ve PDF içindekiler haftalara göre gruplanır; kartlarda ve testte "2. Hafta — hepsi" seçeneği çıkar. |
-| `materials` | hayır | `file` yolu `dersler/<id>/` köküne göredir. PPTX'ler için `onizleme/` altında PDF önizleme beklenir (`scripts/onizleme-olustur.py` üretir). |
+| `materials` | hayır | `file` yolu `dersler/<id>/` köküne göredir. PPTX ve DOCX'ler için `onizleme/` altında PDF önizleme beklenir (`scripts/onizleme-olustur.py` üretir). |
 | `onePager` | önerilir | "Tek sayfa" sekmesi ve `tek-sayfa.pdf`. Yoksa sekme boş kalır, doğrulayıcı uyarır. |
 
 ## Konu (`units`)

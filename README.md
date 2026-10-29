@@ -11,6 +11,8 @@ Build adımı olmayan statik bir site; Vercel'e bağlandığında her push otoma
 |---|---|---|
 | İletişim Hukuku (Vize) | `dersler/iletisim-hukuku/` | 12 ünite · 116 kart · 125 soru |
 | Sosyoloji (Vize) | `dersler/sosyoloji/` | 2.–6. hafta, 11 konu · 101 kart · 91 soru · PDF'lerdeki sarı işaretli yerlerin özetleri |
+| Eleştirel Düşünme (Vize) | `dersler/elestirel-dusunme/` | 1.–5. hafta, 5 konu · 55 kart · 47 soru |
+| İmaj ve Algı Yönetimi (Vize) | `dersler/imaj-algi-yonetimi/` | 1.–4. hafta, 5 konu · 69 kart · 58 soru · İngilizce renk psikolojisi notunun Türkçe çevirisi |
 
 Her dersin sayfasında: **Özet** (konu konu, notlarım alanıyla; **Detaylı / Kısa** geçişi) · **Tek sayfa**
 (bütün ders bir bakışta) · **Kartlar** · **Test** (yanlışlarım listesiyle) · **Defterim** (tüm notlar, .txt indir) ·
@@ -19,7 +21,7 @@ Kısa özet, konuyu çalıştıktan sonra tekrar için; sınavda gereken her bil
 İlerleme ve notlar tarayıcıda saklanır; başka cihaza geçmez.
 
 "Görüntüle" dosyayı sitenin içindeki PDF görüntüleyicide açar (PDF.js, `assets/vendor/pdfjs/`).
-Tarayıcılar PPTX açamadığı için sunumlar, `onizleme/` klasöründeki PDF kopyalarıyla gösterilir; "İndir" her zaman orijinal dosyayı verir.
+Tarayıcılar PPTX/DOCX açamadığı için sunumlar ve Word belgeleri, `onizleme/` klasöründeki PDF kopyalarıyla gösterilir; "İndir" her zaman orijinal dosyayı verir.
 
 ## Vercel'e ilk kurulum (bir kez)
 
@@ -68,7 +70,7 @@ python3 scripts/onizleme-olustur.py           # eksik önizlemeler
 python3 scripts/onizleme-olustur.py --hepsi   # hepsini yeniden
 ```
 
-`materyal/x.pptx` → `onizleme/x.pdf`. Bazı sunumların XML'inde LibreOffice'in açamadığı `ns0:` önekleri var;
+`materyal/x.pptx` (ya da `.docx`) → `onizleme/x.pdf`. Bazı sunumların XML'inde LibreOffice'in açamadığı `ns0:` önekleri var;
 betik bunları geçici bir kopyada düzeltir, orijinallere dokunmaz.
 
 ## Yerelde açmak

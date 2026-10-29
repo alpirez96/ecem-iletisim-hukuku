@@ -49,8 +49,8 @@ for (const [dir, c] of Object.entries(loaded)) {
     if (!fs.existsSync(path.join(base, m.file))) err(`materyal dosyası yok: ${m.file}`);
     if (/[^\x20-\x7e]|\s/.test(m.file)) err(`materyal yolunda Türkçe karakter/boşluk var: ${m.file}`);
     if (m.group && !groups.has(m.group)) err(`materyalin grubu tanımsız: ${m.file} → ${m.group}`);
-    if (/\.pptx?$/i.test(m.file)) {
-      const pv = m.file.replace(/^materyal\//, 'onizleme/').replace(/\.pptx?$/i, '.pdf');
+    if (/\.(pptx?|docx?)$/i.test(m.file)) {
+      const pv = m.file.replace(/^materyal\//, 'onizleme/').replace(/\.(pptx?|docx?)$/i, '.pdf');
       if (!fs.existsSync(path.join(base, pv))) warn(`önizleme yok (Görüntüle çalışmaz): ${pv} → python3 scripts/onizleme-olustur.py`);
     }
   }
