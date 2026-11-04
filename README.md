@@ -13,6 +13,8 @@ Build adımı olmayan statik bir site; Vercel'e bağlandığında her push otoma
 | Sosyoloji (Vize) | `dersler/sosyoloji/` | 2.–6. hafta, 11 konu · 101 kart · 91 soru · PDF'lerdeki sarı işaretli yerlerin özetleri |
 | Eleştirel Düşünme (Vize) | `dersler/elestirel-dusunme/` | 1.–5. hafta, 5 konu · 55 kart · 47 soru |
 | İmaj ve Algı Yönetimi (Vize) | `dersler/imaj-algi-yonetimi/` | 1.–4. hafta, 5 konu · 69 kart · 58 soru · İngilizce renk psikolojisi notunun Türkçe çevirisi |
+| Halkla İlişkiler Uygulamaları (Vize) | `dersler/halkla-iliskiler-uygulamalari/` | 8 konu · 80 kart · 63 soru · dört sunum ve konuşmacı notları |
+| Reklamda Yaratıcılık (Vize) | `dersler/reklamda-yaraticilik/` | 6 bölüm · 61 kart · 45 soru · ders çalışma kitabı ve görsel sunumlar |
 
 Her dersin sayfasında: **Özet** (konu konu, notlarım alanıyla; **Detaylı / Kısa** geçişi) · **Tek sayfa**
 (bütün ders bir bakışta) · **Kartlar** · **Test** (yanlışlarım listesiyle) · **Defterim** (tüm notlar, .txt indir) ·
